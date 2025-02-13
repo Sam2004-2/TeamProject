@@ -5,11 +5,6 @@ import './NavBar.css';
 const NavBar = () => {
   return (
     <nav className="nav-bar" aria-label="Main navigation">
-      {/* Skip to main content link for accessibility */}
-      <a href="#main-content" className="skip-link">
-        Skip to main content
-      </a>
-
       {/* Brand / Logo */}
       <Link to="/" className="nav-brand">
         MyAccessibleSite

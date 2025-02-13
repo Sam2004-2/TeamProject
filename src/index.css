@@ -1,32 +1,39 @@
-/* index.css or a global CSS file */
-
-/* Reset default margin & padding, set box-sizing */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Ensure the body spans the full viewport */
 html, body, #root {
   height: 100%;
 }
 
-/* Modern, dark background with good contrast */
 body {
   font-family: 'Open Sans', Arial, sans-serif;
-  background-color: #121212; /* Dark background */
-  color: #FFFFFF;            /* Light text for contrast */
+  /* 2) Use our new color variables for background/text */
+  background-color: var(--color-bg);
+  color: var(--color-text);
 }
 
-/* Optional: style headings for better readability */
-h1, h2, h3, h4, h5, h6 {
-  margin-bottom: 0.5rem;
+/* 3) Define custom properties for the color scheme */
+:root {
+  --color-bg: #121212;        /* Main background */
+  --color-nav: #1f1f1f;       /* Nav bar background */
+  --color-card-bg: #1e1e1e;   /* Card background */
+  --color-text: #ffffff;      /* Primary text color */
+  --color-accent: #76c7c0;    /* Accent color for links, highlights */
+  --color-focus: #FFD700;     /* Focus outline color (Gold) */
+}
+
+/* 4) Accessibility: Focus outlines */
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
 }
 
 /* Links should stand out on a dark background */
 a {
-  color: #76c7c0;
+  color: var(--color-accent);
   text-decoration: none;
 }
 
