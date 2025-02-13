@@ -1,0 +1,69 @@
+
+   .overview {
+    width: 100%;
+    min-height: calc(100vh - 70px); /* subtract navbar height */
+    padding: 2rem;
+    background-color: #121212; /* matches global dark background */
+    color: #fff;
+  }
+  
+  /* Separate categories with spacing */
+  .category {
+    margin-bottom: 3rem;
+  }
+  
+  /* Larger font for category titles */
+  .category-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Use a responsive grid for the cards */
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  /* Card styles: modern shadow, subtle hover effect */
+  .card {
+    display: flex;
+    flex-direction: column;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    overflow: hidden;
+    text-decoration: none;
+    color: #fff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .card:hover,
+  .card:focus {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Ensure the image fits nicely */
+  .card-image {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+  }
+  
+  /* Card content spacing */
+  .card-content {
+    padding: 1rem;
+  }
+  
+  .card-title {
+    font-size: 1.2rem;
+    margin: 0 0 0.5rem;
+  }
+  
+  .card-description {
+    font-size: 0.95rem;
+    margin: 0;
+    opacity: 0.8; /* Subtle contrast */
+  }
+  
