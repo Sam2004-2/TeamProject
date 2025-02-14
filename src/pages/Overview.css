@@ -48,7 +48,7 @@
 .card-image {
   width: 100%;
   height: 200px; /* Larger image area */
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 

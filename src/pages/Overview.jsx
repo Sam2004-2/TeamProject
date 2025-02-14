@@ -12,7 +12,7 @@ const categories = [
       {
         id: "intro",
         title: "Introduction",
-        image: "/assets/checklist.png", // Ensure the file exists in public/assets
+        image: "/assets/intro.svg", // Ensure the file exists in public/assets
         description: "Learn how to get started.",
       },
       {
@@ -30,13 +30,13 @@ const categories = [
       {
         id: "planning",
         title: "Planning",
-        image: "/assets/checklist.png",
+        image: "/assets/planning.svg",
         description: "Steps to plan your activities.",
       },
       {
         id: "overview",
         title: "Plan Overview",
-        image: "/assets/checklist.png",
+        image: "/assets/overview.svg",
         description: "See the full plan at a glance.",
       },
     ],
