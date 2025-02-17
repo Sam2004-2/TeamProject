@@ -1,68 +1,102 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import "tailwindcss";
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+/* Reset and basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  font-family: 'Inter', sans-serif;
+  background-color: #f2f2f2;
+  color: #333;
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* Container for category selection */
+.category-container {
+  width: 100%;
+  max-width: 1200px; /* Increased max width for a larger overall layout */
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+/* Heading style */
+.category-container h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Grid for categories: two per row */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* Category button style */
+.category-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;        /* Increased padding for larger boxes */
+  min-height: 150px;    /* Ensures each button is taller */
+  font-size: 1.5rem;    /* Larger font size for better readability */
+  font-weight: 600;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+.category-button:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Specific colors for each category */
+.category-introduction {
+  background-color: #6b46c1; /* Purple */
+}
+
+.category-getting-ready {
+  background-color: #ecc94b; /* Yellow */
+  color: #333; /* Darker text for readability */
+}
+
+/* Update selector to match "Putting the Plan Together" */
+.category-putting-the-plan-together {
+  background-color: #f56565; /* Red */
+}
+
+/* Update selector to match "Important to and Important for Me" */
+.category-important-to-and-important-for-me {
+  background-color: #4299e1; /* Blue */
+}
+
+/* For "My Goals", you can update the selector to match the generated class */
+.category-my-goals {
+  background-color: #ed8936; /* Orange */
+}
+
+.category-making-it-happen {
+  background-color: #48bb78; /* Green */
+}
+
+
+/* Responsive: switch to one column on narrow screens */
+@media (max-width: 600px) {
+  .category-grid {
+    grid-template-columns: 1fr;
   }
 }
