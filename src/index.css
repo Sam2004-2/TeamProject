@@ -79,3 +79,76 @@ body {
 .icon {
   font-size: 3rem;
 }
+
+nav {
+  background-color: #fff;
+  border-radius: 10px;
+  border: 1px solid #333;
+  align-content: center;
+  height: 75px;
+  margin-bottom: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  float: left;
+  margin-left: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+li a {
+  display: block;
+  border-radius: 10px;
+  color: #000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-icon {
+  margin-left: 10px;
+}
+
+.nav-icon:hover {
+  color: #000;
+  background-color: #4299e1;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  cursor: pointer;
+  color: #fff;
+  transform: scale(1.12);
+}
+
+.my-plan:hover {
+  background-color: #f56565;
+}
+
+.action-plan:hover {
+  background-color: #ed8936;
+}
+
+.mail-notes:hover {
+  background-color: #04AA6D;
+}
+
+.logout:hover {
+  background-color: gray;
+}
+
+.my-plan.active,
+.action-plan.active,
+.mail-notes.active,
+.logout.active {
+  text-decoration: underline;
+}
