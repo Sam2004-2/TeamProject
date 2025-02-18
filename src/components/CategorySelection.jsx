@@ -1,33 +1,33 @@
+// CategorySelection.jsx
 import PropTypes from "prop-types";
 
 const categories = [
-  { name: "Introduction", color: "bg-purple-500", icon: "🔗" },
-  { name: "Getting Ready", color: "bg-yellow-500", icon: "✅" },
-  { name: "Putting the Plan Together", color: "bg-pink-500", icon: "🛠" },
-  { name: "Important to and Important for Me", color: "bg-blue-500", icon: "💡" },
-  { name: "My Goals", color: "bg-orange-500", icon: "🏆" },
-  { name: "Making it Happen", color: "bg-green-500", icon: "✈️" },
+  { name: "Introduction", color: "category-introduction", icon: "🔗" },
+  { name: "Getting Ready", color: "category-getting-ready", icon: "✅" },
+  { name: "Putting the Plan Together", color: "category-putting-the-plan-together", icon: "🛠" },
+  { name: "Important to and Important for Me", color: "category-important-to-and-important-for-me", icon: "💡" },
+  { name: "My Goals", color: "category-my-goals", icon: "🏆" },
+  { name: "Making it Happen", color: "category-making-it-happen", icon: "✈️" },
 ];
 
 const CategorySelection = ({ onSelectCategory }) => {
   return (
-<div className="category-container">
-  <h1>Select a Category</h1>
-  <div className="category-grid">
-    {categories.map((category) => (
-      <button
-        key={category.name}
-        className={`category-button category-${category.name
-          .toLowerCase()
-          .replace(/\s+/g, "-")}`}
-        onClick={() => onSelectCategory(category.name)}
-      >
-        <span>{category.name}</span>
-        <span className="icon">{category.icon}</span>
-      </button>
-    ))}
-  </div>
-</div>
+    <div className="category-container">
+      <h1>Select a Category</h1>
+      <div className="row">
+        {categories.map((category) => (
+          <div key={category.name} className="col-md-6">
+            <button
+              className={`btn w-100 category-button ${category.color}`}
+              onClick={() => onSelectCategory(category.name)}
+            >
+              <span>{category.name}</span>
+              <span className="icon">{category.icon}</span>
+            </button>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 };
 
