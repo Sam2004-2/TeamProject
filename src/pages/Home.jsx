@@ -1,3 +1,4 @@
+// Home.jsx
 import CategorySelection from "../components/CategorySelection";
 import { NavigationBar } from "../components/NavigationBar";
 

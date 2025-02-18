@@ -1,8 +1,4 @@
-@import "tailwindcss";
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* index.css */
 
 /* Reset and basic styles */
 * {
@@ -12,51 +8,41 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
   color: #333;
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
 }
 
-/* Container for category selection */
+/* Category container */
 .category-container {
-  width: 100%;
-  max-width: 1200px; /* Increased max width for a larger overall layout */
+  max-width: 1200px;
+  margin: 20px auto; /* centers container with some vertical spacing */
+  padding: 20px;
 }
 
 /* Heading style */
 .category-container h1 {
   text-align: center;
   font-size: 2.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 20px;
 }
 
-/* Grid for categories: two per row */
-.category-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-
-/* Category button style */
+/* Category button custom styles */
 .category-button {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 30px;        /* Increased padding for larger boxes */
-  min-height: 150px;    /* Ensures each button is taller */
-  font-size: 1.5rem;    /* Larger font size for better readability */
+  align-items: center;
+  padding: 30px;
+  min-height: 150px;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #fff;
   border: none;
   border-radius: 12px;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px; /* space between buttons */
 }
 
 .category-button:hover {
@@ -64,41 +50,34 @@ body {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Specific colors for each category */
+/* Custom color classes for each category */
 .category-introduction {
   background-color: #6b46c1; /* Purple */
 }
 
 .category-getting-ready {
-  background-color: #ecc94b; /* Yellow */
-  color: #333; /* Darker text for readability */
+  background-color: #ff1111; /* Red-ish for demonstration */
 }
 
-/* Update selector to match "Putting the Plan Together" */
 .category-putting-the-plan-together {
   background-color: #f56565; /* Red */
 }
 
-/* Update selector to match "Important to and Important for Me" */
 .category-important-to-and-important-for-me {
   background-color: #4299e1; /* Blue */
 }
 
-/* For "My Goals", you can update the selector to match the generated class */
 .category-my-goals {
   background-color: #ed8936; /* Orange */
 }
 
 .category-making-it-happen {
-  background-color: #48bb78; /* Green */
+  background-color: #052c00; /* Dark Green */
 }
 
-
-/* Responsive: switch to one column on narrow screens */
-@media (max-width: 600px) {
-  .category-grid {
-    grid-template-columns: 1fr;
-  }
+/* Icon style */
+.icon {
+  font-size: 3rem;
 }
 
 nav {
