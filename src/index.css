@@ -136,11 +136,12 @@ li a {
 }
 
 .nav-icon {
-  
+  margin-left: 10px;
 }
 
 .nav-icon:hover {
   color: #000;
+  background-color: #4299e1;
 }
 
 /* Change the link color to #111 (black) on hover */
