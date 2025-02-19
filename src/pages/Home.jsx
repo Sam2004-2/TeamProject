@@ -1,16 +1,27 @@
-// Home.jsx
+import { useState } from 'react';
 import CategorySelection from "../components/CategorySelection";
-import { NavigationBar } from "../components/NavigationBar";
+import CategoryDetails from "../components/CategoryDetails";
+import { NavigationBar } from '../components/NavigationBar';
 
 const Home = () => {
+  const [selectedCategory, setSelectedCategory] = useState(null);
+
   const handleCategorySelect = (category) => {
-    console.log("Selected Category:", category);
+    setSelectedCategory(category);
   };
 
- return (
+  const handleBack = () => {
+    setSelectedCategory(null);
+  };
+
+  return (
     <div>
-      <NavigationBar/>
-      <CategorySelection onSelectCategory={handleCategorySelect} />
+      <NavigationBar />
+      {selectedCategory ? (
+        <CategoryDetails category={selectedCategory} onBack={handleBack} />
+      ) : (
+        <CategorySelection onSelectCategory={handleCategorySelect} />
+      )}
     </div>
   );
 };

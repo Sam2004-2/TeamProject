@@ -13,7 +13,6 @@ const categories = [
 const CategorySelection = ({ onSelectCategory }) => {
   return (
     <div className="category-container">
-      <h1>Select a Category</h1>
       <div className="row">
         {categories.map((category) => (
           <div key={category.name} className="col-md-6">
