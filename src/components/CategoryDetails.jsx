@@ -8,8 +8,10 @@ const categoryGoals = {
     { title: "Overview of Concepts", image: "https://rubberstampsonline.com.sg/image/cache//products/stock_stamp/22-SAMPLE-900x900.jpg" },
   ],
   "Getting Ready": [
-    { title: "Gather Materials", image: "https://rubberstampsonline.com.sg/image/cache//products/stock_stamp/22-SAMPLE-900x900.jpg" },
-    { title: "Set Up Workspace", image: "https://rubberstampsonline.com.sg/image/cache//products/stock_stamp/22-SAMPLE-900x900.jpg" },
+    { title: "My History and Profile", image: "https://rubberstampsonline.com.sg/image/cache//products/stock_stamp/22-SAMPLE-900x900.jpg" },
+    { title: "How to Talk to Me", image: "https://rubberstampsonline.com.sg/image/cache//products/stock_stamp/22-SAMPLE-900x900.jpg" },
+    { title: "My Planning Team", image: "https://rubberstampsonline.com.sg/image/cache//products/stock_stamp/22-SAMPLE-900x900.jpg" },
+    { title: "What Staff Do", image: "https://rubberstampsonline.com.sg/image/cache//products/stock_stamp/22-SAMPLE-900x900.jpg" }
   ],
   "Putting the Plan Together": [
     { title: "Draft Your Plan", image: "https://rubberstampsonline.com.sg/image/cache//products/stock_stamp/22-SAMPLE-900x900.jpg" },
@@ -35,9 +37,9 @@ const CategoryDetails = ({ category, onBack }) => {
   return (
     <div className="category-details-container">
       <button className="category-back-button" onClick={onBack}>
-        &larr; Back
+        &larr; Go Back
       </button>
-      <h1 className="category-heading">{category} Goals</h1>
+      <h1 className="category-heading">{category}</h1>
       <div className="category-card-row">
         {goals.map((goal, index) => (
           <Link
