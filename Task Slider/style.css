@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body{
+    margin: 0;
+    font-family: Poppins;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+    margin-top: 30px;
+}
+
+header a{
+    color: #000;
+    font-size: 30px;
+    margin-left: 100px;
+    margin-right: 40px;
+}
+
+/* carousel */
+.carousel{
+    height: 650px;
+    width: 1200px;
+    margin-left: 100px;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel .list .item{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    margin: 100px;
+    box-shadow: 5px 5px 5px 5px #000;
+    object-fit: cover;
+}
+
+.carousel .list .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel .list .item p{
+    width: 700px;
+    height: 200px;
+    font-size: 24px;
+    margin-left: 350px;
+    margin-top: -175px;
+    color: #000;
+}
+
+h1{
+    width: 700px;
+    height: 200px;
+    font-size: 45px;
+    margin-left: 350px;
+    margin-top: -95%;
+    color: #000;
+}
+
+.carousel .list .item .title,
+.carousel .list .item .topic{
+    font-size: 5em;
+    font-weight: bold;
+    line-height: 1.3em;
+}
+.carousel .list .item .buttons{
+    display: grid;
+    grid-template-columns: repeat(2, 130px);
+    grid-template-rows: 40px;
+    gap: 5px;
+    margin-top: 20px;
+}
+.carousel .list .item .buttons button{
+    border: none;
+    background-color: #000;
+    letter-spacing: 3px;
+    font-family: Poppins;
+    font-weight: 500;
+}
+.carousel .list .item .buttons button:nth-child(2){
+    background-color: transparent;
+    border: 1px solid #000;
+    color: #eee;
+}
+
+
+/* thumbail */
+.thumbnail{
+    position: absolute;
+    z-index: 100;
+    margin-top: 350px;
+    display: flex;
+    gap: 20px;
+}
+.thumbnail .item{
+    width: 150px;
+    height: 250px;
+    flex-shrink: 0;
+    position: relative;
+}
+.thumbnail .item img{
+    width: 150px;
+    height: 200px;
+    margin-top: 75px;
+    margin-left: 100px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: #000 solid 5px;
+}
+
+
+
+/* arrows */
+.arrows{
+    position: absolute;
+    top: 45%;
+    z-index: 100;
+    margin-left: 37%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.arrows button{
+    margin-top: 50px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 30px;
+    background-color: black;
+    border: none;
+    color: #fff;
+    font-family: monospace;
+    font-weight: bold;
+}
+.arrows button:hover{
+    cursor: pointer;
+}
+
+/* animation */
+.carousel .list .item:nth-child(1){
+    z-index: 1;
+}
+
+/* create animation when next click */
+.carousel.next .list .item:nth-child(1) img{
+    width: 150px;
+    height: 220px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    border-radius: 30px;
+    animation: showImage .5s linear 1 forwards;
+}
+@keyframes showImage{
+    to{
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+}
+
+.carousel.next .thumbnail .item:nth-last-child(1){
+    overflow: hidden;
+    animation: showThumbnail .5s linear 1 forwards;
+}
+.carousel.prev .list .item img{
+    z-index: 100;
+}
+@keyframes showThumbnail{
+    from{
+        width: 0;
+        opacity: 0;
+    }
+}
+.carousel.next .thumbnail{
+    animation: effectNext .5s linear 1 forwards;
+}
+
+@keyframes effectNext{
+    from{
+        transform: translateX(150px);
+    }
+}
+
+
+/* prev click */
+
+.carousel.prev .list .item:nth-child(2){
+    z-index: 2;
+}
+
+.carousel.prev .list .item:nth-child(2) img{
+    animation: outFrame 0.5s linear 1 forwards;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
