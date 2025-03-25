@@ -1,8 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
 
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
 
 .app-container {
   display: flex;
   height: 100vh;
+}
+
+.menu-icon {
+  width: 50px;       /* Adjust as needed */
+  height: 50px;
+  margin-right: 8px; /* Space between icon and text */
+  vertical-align: middle;
 }
 
 
@@ -89,6 +101,7 @@
   display: flex;
   gap: 1rem;
   margin-bottom: 1rem;
+  font: Montserrat, sans-serif;
 }
 
 .menu-item {
@@ -122,6 +135,13 @@
   padding-right: 1rem;
 }
 
+@media (max-width: 768px) {
+  .cards-grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0.5rem;
+    padding-right: 0;
+  }
+}
 
 .card {
   display: flex;
@@ -131,7 +151,7 @@
   border-radius: 8px;
   padding: 0.75rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-
+  font: Montserrat, sans-serif;
 }
 
 .card-image {
@@ -146,6 +166,7 @@
   margin: 0;
   font-size: 1rem;
   color: #0066cc;
+  font: Montserrat, sans-serif;
 }
 
 

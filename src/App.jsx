@@ -29,19 +29,43 @@ function App() {
         </nav>
       </aside>
 
-      {/* MAIN CONTENT */}
-      <main className="main-content">
-        <div className="top-menu">
-          <div className="menu-item messages">Messages</div>
-          <div className="menu-item media">Media</div>
-          <div className="menu-item calendar">Calendar</div>
+    {/* MAIN CONTENT */}
+    <main className="main-content">
+      <div className="top-menu">
+        <div className="menu-item messages">
+          <img
+            src="/icons/Message.png"
+            alt="Messages Icon"
+            className="menu-icon"
+          />
+          Messages
         </div>
-        <div className="cards-grid">
-          {cardData.map((item) => (
-            <Card key={item.id} title={item.title} image={item.image} />
-          ))}
+
+        <div className="menu-item media">
+          <img
+            src="/icons/Media.png"
+            alt="Media Icon"
+            className="menu-icon"
+          />
+          Media
         </div>
-      </main>
+
+        <div className="menu-item calendar">
+          <img
+            src="/icons/Calendar.png"
+            alt="Calendar Icon"
+            className="menu-icon"
+          />
+          Calendar
+        </div>
+      </div>
+
+      <div className="cards-grid">
+        {cardData.map((item) => (
+          <Card key={item.id} title={item.title} image={item.image} />
+        ))}
+      </div>
+    </main>
 
       {/* Branding */}
       <div className="branding-top-right">
