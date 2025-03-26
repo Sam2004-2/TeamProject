@@ -1,0 +1,182 @@
+[
+    {
+      "id": 1,
+      "title": "My History and Profile",
+      "image": "/images/History.png",
+      "details": {
+        "description": "Here is some background about me, including my personal history and profile information.",
+        "images": [
+          "/images/History-sub1.jpg",
+          "/images/History-sub2.jpg"
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "title": "Things I Like to Do",
+      "image": "/images/Likes.jpg",
+      "details": {
+        "description": "A collection of my favorite activities and hobbies.",
+        "images": [
+          "/images/Likes-sub1.jpg",
+          "/images/Likes-sub2.jpg"
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "title": "How to Talk to Me",
+      "image": "/images/TalktoMe.jpg",
+      "details": {
+        "description": "Tips and guidelines on how best to communicate with me.",
+        "images": [
+          "/images/TalktoMe-sub1.jpg"
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "title": "Good Things People Say",
+      "image": "/images/Good.png",
+      "details": {
+        "description": "Testimonials and kind words from people who know me.",
+        "images": [
+          "/images/Good-sub1.jpg",
+          "/images/Good-sub2.jpg"
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "title": "My Planning Team",
+      "image": "/images/PlanningTeam.png",
+      "details": {
+        "description": "Details about the people and team who help plan my activities.",
+        "images": [
+          "/images/PlanningTeam-sub1.jpg"
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "title": "My Skills",
+      "image": "/images/Skills.png",
+      "details": {
+        "description": "A showcase of my skills and areas of expertise.",
+        "images": [
+          "/images/Skills-sub1.jpg"
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "title": "My Goals",
+      "image": "/images/Goal.png",
+      "details": {
+        "description": "My short-term and long-term goals, and the steps I am taking to achieve them.",
+        "images": [
+          "/images/Goal-sub1.jpg"
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "title": "Plan Together",
+      "image": "/images/PlanTogether.jpg",
+      "details": {
+        "description": "Information about putting the plan together or notes I want to track.",
+        "images": [
+          "/images/PlanTogether-sub1.jpg"
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "title": "Key People in My Life",
+      "image": "/images/KeyPeople.jpg",
+      "details": {
+        "description": "Profiles of the key people who have a significant impact on my life.",
+        "images": [
+          "/images/KeyPeople-sub1.jpg"
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "title": "Being Myself",
+      "image": "/images/Myself.png",
+      "details": {
+        "description": "Embracing authenticity and being true to who I am.",
+        "images": [
+          "/images/Myself-sub1.jpg"
+        ]
+      }
+    },
+    {
+      "id": 11,
+      "title": "What Staff Do",
+      "image": "/images/Staff.png",
+      "details": {
+        "description": "Information about the roles and responsibilities of the staff.",
+        "images": [
+          "/images/Staff-sub1.jpg"
+        ]
+      }
+    },
+    {
+      "id": 12,
+      "title": "What Is and Isn’t Working",
+      "image": "/images/Working.jpg",
+      "details": {
+        "description": "Insights on what strategies or ideas are working and which ones are not.",
+        "images": [
+          "/images/Working-sub1.jpg"
+        ]
+      }
+    },
+    {
+      "id": 13,
+      "title": "My Hopes and Dreams",
+      "image": "/images/Hopes.png",
+      "details": {
+        "description": "A glimpse into my aspirations and dreams for the future.",
+        "images": [
+          "/images/Hopes-sub1.jpg"
+        ]
+      }
+    },
+    {
+      "id": 14,
+      "title": "What Is Important to Me",
+      "image": "/images/Important.png",
+      "details": {
+        "description": "The values and priorities that matter most in my life.",
+        "images": [
+          "/images/Important-sub1.jpg"
+        ]
+      }
+    },
+    {
+      "id": 15,
+      "title": "What Is Important for Me",
+      "image": "/images/Importantfor.jpg",
+      "details": {
+        "description": "Resources and support that are important for my personal growth.",
+        "images": [
+          "/images/Importantfor-sub1.jpg"
+        ]
+      }
+    },
+    {
+      "id": 16,
+      "title": "My Ideal Supporter",
+      "image": "/images/IdealSupporter.png",
+      "details": {
+        "description": "Attributes of the ideal supporter who can help me succeed.",
+        "images": [
+          "/images/IdealSupporter-sub1.jpg"
+        ]
+      }
+    }
+  ]
+  
