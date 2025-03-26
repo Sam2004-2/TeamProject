@@ -29,17 +29,29 @@ function App() {
             />
             <h3 className="profile-name">Laura King</h3>
           </div>
-          <nav className="sidebar-menu">
-            <button className="sidebar-btn plan-btn">
-              <span className="sidebar-icon">📝</span> Plan
-            </button>
-            <button className="sidebar-btn goals-btn">
-              <span className="sidebar-icon">🎯</span> Goals
-            </button>
-            <button className="sidebar-btn notes-btn">
-              <span className="sidebar-icon">🗒️</span> Notes
-            </button>
-          </nav>
+        <nav className="sidebar-menu">
+          <button className="sidebar-btn plan-btn">
+            <img 
+              src="/icons/Noun.png" 
+              alt="Plan Icon" 
+              className="sidebar-icon"
+            /> Plan
+          </button>
+          <button className="sidebar-btn goals-btn">
+            <img 
+              src="/icons/Goals.png" 
+              alt="Goals Icon" 
+              className="sidebar-icon"
+            /> Goals
+          </button>
+          <button className="sidebar-btn notes-btn">
+            <img 
+              src="/icons/Notes.png" 
+              alt="Notes Icon" 
+              className="sidebar-icon"
+            /> Notes
+          </button>
+        </nav>
         </aside>
 
         {/* MAIN CONTENT */}
@@ -101,13 +113,6 @@ function App() {
           <img
             src="https://aspirico.com/wp-content/uploads/2023/01/iplanit-with-tagline-01-011.png"
             alt="iplanit by Aspirico"
-            className="branding-logo"
-          />
-        </div>
-        <div className="branding-bottom-right">
-          <img
-            src="/images/st-john-of-god.png"
-            alt="St John of God"
             className="branding-logo"
           />
         </div>

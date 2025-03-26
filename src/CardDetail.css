@@ -1,0 +1,110 @@
+.card-detail-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .back-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .back-icon {
+    width: 100px;
+    height: auto;
+  }
+  
+  
+  /* Top section: image on the left, text on the right */
+  .top-section {
+    display: flex;
+    gap: 2rem; /* Space between image and text */
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Left side: main image */
+  .image-section {
+    flex: 1;           /* Occupies half or so of the space */
+    max-width: 600px;  /* Limit the max width if desired */
+  }
+  
+  .main-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  
+  /* Right side: text */
+  .text-section {
+    flex: 1;           /* Occupies the remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  .task-title {
+    margin: 0 0 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  
+  .task-description {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+  }
+  
+  /* Bottom section: thumbnails */
+  .thumbnails-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: flex-start;
+    margin-top: 1rem;
+  }
+  
+  .thumbnail {
+    width: 80px;
+    height: 80px;
+    border-radius: 4px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.2s;
+  }
+  
+  .thumbnail:hover {
+    border-color: #ccc;
+  }
+  
+  .thumbnail.selected {
+    border-color: #0066cc;
+  }
+  
+  /* RESPONSIVE ADJUSTMENTS */
+  @media (max-width: 768px) {
+    .top-section {
+      flex-direction: column;
+    }
+    
+    .image-section,
+    .text-section {
+      max-width: 100%;
+    }
+    
+    .main-image {
+      max-width: 100%;
+    }
+    
+    .thumbnail {
+      width: 60px;
+      height: 60px;
+    }
+  }
+  
