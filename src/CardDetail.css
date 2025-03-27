@@ -12,6 +12,7 @@
     justify-content: center;
     position: relative;
     margin-bottom: 2rem;
+    padding-left: 120px; /* Make space for the back button */
   }
   
   .back-button {
@@ -189,8 +190,16 @@
       font-size: 1.5rem;
     }
 
+    .header-section {
+      padding-left: 100px; /* Slightly less padding on mobile */
+    }
+
     .back-button {
       left: 1rem;
+    }
+
+    .back-icon {
+      width: 60px; /* Smaller icon on mobile */
     }
   }
   
