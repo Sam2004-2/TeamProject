@@ -19,6 +19,7 @@ body {
   max-width: 1200px;
   margin: 20px auto; /* centers container with some vertical spacing */
   padding: 20px;
+  height: calc(100vh - 115px); /* Full height minus navbar and margins */
 }
 
 /* Heading style */
@@ -28,26 +29,51 @@ body {
   margin-bottom: 20px;
 }
 
+/* Category grid layout */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-template-rows: repeat(3, 1fr); /* 3 rows */
+  gap: 20px; /* Space between grid items */
+  height: 100%; /* Take full height of container */
+}
+
 /* Category button custom styles */
 .category-button {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding: 30px;
-  min-height: 150px;
+  padding: 20px;
   font-size: 1.5rem;
   font-weight: 600;
-  color: #fff;
+  color: #333;
+  background-color: #f8f9fa;
   border: none;
   border-radius: 12px;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  margin-bottom: 20px; /* space between buttons */
+  max-height: 240px;
+  max-width: 240px;
+  text-align: center;
+  height: 100%;
+  width: 100%;
 }
 
 .category-button:hover {
   transform: scale(1.02);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background-color: #e9ecef;
+}
+
+.category-icon {
+  width: auto;  /* Adjust size to your preference */
+  height: 60%; /* Adjust size to your preference */
+  object-fit: contain; /* Ensures the icon scales proportionally */
+}
+
+.category-name {
+  margin-bottom: 10px;
 }
 
 /* Custom color classes for each category */
