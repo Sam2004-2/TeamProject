@@ -30,13 +30,13 @@ function App() {
             <h3 className="profile-name">Laura King</h3>
           </div>
         <nav className="sidebar-menu">
-          <button className="sidebar-btn plan-btn">
+          <Link to="/" className="sidebar-btn plan-btn" style={{ textDecoration: 'none' }}>
             <img 
               src="/icons/Noun.png" 
               alt="Plan Icon" 
               className="sidebar-icon"
             /> Plan
-          </button>
+          </Link>
           <button className="sidebar-btn goals-btn">
             <img 
               src="/icons/Goals.png" 

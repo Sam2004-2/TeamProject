@@ -51,14 +51,17 @@ function CardDetail() {
 
   return (
     <div className="card-detail-container">
-      {/* A back arrow or button to return to the previous page */}
-      <button onClick={() => navigate(-1)} className="back-button">
-        <img
-          src="/icons/Back-Arrow.png"
-          alt="Go back"
-          className="back-icon"
-        />
-      </button>
+      {/* Header section with back arrow and section heading */}
+      <div className="header-section">
+        <button onClick={() => navigate(-1)} className="back-button">
+          <img
+            src="/icons/Back-Arrow.png"
+            alt="Go back"
+            className="back-icon"
+          />
+        </button>
+        <h1 className="section-heading">{title}</h1>
+      </div>
 
       {/* Top section: main image on the left, text on the right */}
       <div className="top-section">
@@ -90,7 +93,7 @@ function CardDetail() {
           )}
         </div>
         <div className="text-section">
-          <h2 className="task-title">{title}</h2>
+          <h2 className="task-title">Sub-heading</h2>
           {description && <p className="task-description">{description}</p>}
         </div>
       </div>
