@@ -54,9 +54,8 @@ function App() {
         </nav>
         </aside>
 
-        {/* MAIN CONTENT */}
-        <main className="main-content">
-          <div className="top-menu">
+        {/* NAV BAR */}
+        <div className="top-menu">
             <div className="menu-item messages">
               <img
                 src="/icons/Message.png"
@@ -81,8 +80,12 @@ function App() {
               />
               Calendar
             </div>
-          </div>
 
+            
+        </div>
+
+        {/* MAIN CONTENT */}
+        <main className="main-content">
           {/* Define our routes here */}
           <Routes>
             {/* HOME / CARD GRID */}
@@ -116,6 +119,15 @@ function App() {
             className="branding-logo"
           />
         </div>
+
+        <div className="branding-bottom-right">
+          <img
+            src="https://www.sjog.ie/wp-content/uploads/2024/01/Parent.svg"
+            alt="St John of God"
+            className="branding-logo"
+          />
+        </div>
+
       </div>
     </Router>
   );
