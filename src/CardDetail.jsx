@@ -32,31 +32,68 @@ function CardDetail() {
     setSelectedImageIndex(index);
   };
 
+  // Handle navigation between images
+  const handlePreviousImage = () => {
+    if (images && images.length > 0) {
+      setSelectedImageIndex((prevIndex) => 
+        prevIndex === 0 ? images.length - 1 : prevIndex - 1
+      );
+    }
+  };
+
+  const handleNextImage = () => {
+    if (images && images.length > 0) {
+      setSelectedImageIndex((prevIndex) => 
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+    }
+  };
+
   return (
     <div className="card-detail-container">
-      {/* A back arrow or button to return to the previous page */}
-      <button onClick={() => navigate(-1)} className="back-button">
-        <img
-          src="/icons/Back-Arrow.png"
-          alt="Go back"
-          className="back-icon"
-        />
-      </button>
-
+      {/* Header section with back arrow and section heading */}
+      <div className="header-section">
+        <button onClick={() => navigate(-1)} className="back-button">
+          <img
+            src="/icons/Back-Arrow.png"
+            alt="Go back"
+            className="back-icon"
+          />
+        </button>
+        <h1 className="section-heading">{title}</h1>
+      </div>
 
       {/* Top section: main image on the left, text on the right */}
       <div className="top-section">
         <div className="image-section">
           {images && images.length > 0 && (
-            <img
-              src={images[selectedImageIndex]}
-              alt={`${title} - image ${selectedImageIndex + 1}`}
-              className="main-image"
-            />
+            <div className="image-container">
+              <img
+                src={images[selectedImageIndex]}
+                alt={`${title} - image ${selectedImageIndex + 1}`}
+                className="main-image"
+              />
+              <div className="image-navigation">
+                <button className="nav-button prev-button" onClick={handlePreviousImage}>
+                  <img
+                    src="/icons/leftArrow.png"
+                    alt="Previous image"
+                    className="nav-icon"
+                  />
+                </button>
+                <button className="nav-button next-button" onClick={handleNextImage}>
+                  <img
+                    src="/icons/rightArrow.png"
+                    alt="Next image"
+                    className="nav-icon"
+                  />
+                </button>
+              </div>
+            </div>
           )}
         </div>
         <div className="text-section">
-          <h2 className="task-title">{title}</h2>
+          <h2 className="task-title">Sub-heading</h2>
           {description && <p className="task-description">{description}</p>}
         </div>
       </div>
