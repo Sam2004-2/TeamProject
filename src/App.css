@@ -70,10 +70,12 @@ body {
   text-decoration: none;
   box-sizing: border-box;
   height: 88px; /* Fixed height to match other buttons */
+  transition: all 0.2s ease;
 }
 
 .sidebar-btn:hover {
-  opacity: 0.9;
+  transform: scale(1.05);
+  opacity: 0.8;
 }
 
 .sidebar-icon {
@@ -130,6 +132,12 @@ body {
   font-weight: bold;
   border-radius: 8px;
   cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.menu-item:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
 }
 
 @media (max-width: 430px) {
@@ -158,15 +166,17 @@ body {
   overflow-y: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  padding-right: 1rem;
+  gap: 2rem;
+  padding: 0.5rem 2rem 2rem 2.5rem;
+  scroll-behavior: smooth;
+  overscroll-behavior: contain;
 }
 
 @media (max-width: 768px) {
   .cards-grid {
     grid-template-columns: repeat(1, 1fr);
-    gap: 0.5rem;
-    padding-right: 0;
+    gap: 1.5rem;
+    padding: 0.5rem 1.5rem 1.5rem 1.5rem;
   }
 }
 
@@ -176,17 +186,31 @@ body {
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 0.75rem;
+  padding: 1.25rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   font: Montserrat, sans-serif;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-color: #0066cc;
+}
+
+.card:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .card-image {
-  width: 130px;
-  height: 130px;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
   border-radius: 4px;
-  margin-right: 1rem;
+  margin-right: 1.5rem;
+  flex-shrink: 0;
 }
 
 .card-title {
@@ -194,6 +218,8 @@ body {
   font-size: 1rem;
   color: #0066cc;
   font: Montserrat, sans-serif;
+  text-align: center;
+  flex: 1;
 }
 
 
@@ -214,4 +240,23 @@ body {
   height: auto;
   display: block;
   margin-bottom: 1rem;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.thumbnail:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
+}
+
+.thumbnail.active {
+  border-color: #0066cc;
 }
