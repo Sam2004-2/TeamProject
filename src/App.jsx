@@ -32,21 +32,21 @@ function App() {
         <nav className="sidebar-menu">
           <button className="sidebar-btn plan-btn">
             <img 
-              src="/icons/Noun.png" 
+              src="/icons/edit.svg" 
               alt="Plan Icon" 
               className="sidebar-icon"
             /> Plan
           </button>
           <button className="sidebar-btn goals-btn">
             <img 
-              src="/icons/Goals.png" 
+              src="/icons/event_lists.svg" 
               alt="Goals Icon" 
               className="sidebar-icon"
             /> Goals
           </button>
           <button className="sidebar-btn notes-btn">
             <img 
-              src="/icons/Notes.png" 
+              src="/icons/sticky_note_2.svg" 
               alt="Notes Icon" 
               className="sidebar-icon"
             /> Notes
@@ -58,7 +58,7 @@ function App() {
         <div className="top-menu">
             <div className="menu-item messages">
               <img
-                src="/icons/Message.png"
+                src="/icons/mail.svg"
                 alt="Messages Icon"
                 className="menu-icon"
               />
@@ -66,7 +66,7 @@ function App() {
             </div>
             <div className="menu-item media">
               <img
-                src="/icons/Media.png"
+                src="/icons/photo_camera.svg"
                 alt="Media Icon"
                 className="menu-icon"
               />
@@ -74,7 +74,7 @@ function App() {
             </div>
             <div className="menu-item calendar">
               <img
-                src="/icons/Calendar.png"
+                src="/icons/calendar.svg"
                 alt="Calendar Icon"
                 className="menu-icon"
               />
