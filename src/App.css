@@ -6,8 +6,13 @@
 }
 
 .app-container {
+  height: 100vh;
+  top: 0%;
+  left: 0%;
   display: flex;
   position: relative;
+  border: #fff;
+  border-width: 1px;
 }
 
 .sidebar {
@@ -134,22 +139,22 @@
 }
 
 .messages {
-  background-color: #3ba4f9;
+  background-color: #007aff;
 }
 
 .media {
-  background-color: #ffb300;
+  background-color: #e97e25;
 }
 
 .calendar {
-  background-color: #f44;
+  background-color: #fc0;
 }
 
 .main-content {
   width: 65%;
   height: 75%;
-  top: 180px;
-  left: 382px;
+  top: 20%;
+  left: 25%;
   position: absolute;
 }
 
