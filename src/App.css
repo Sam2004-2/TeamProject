@@ -159,12 +159,12 @@
 }
 
 .cards-grid {
-  height: 66vh;
+  height: 65vh;
   overflow-y: scroll;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
-  padding-right: 1rem;
+  padding: 1rem;
   scroll-behavior: smooth;
 }
 
@@ -185,6 +185,18 @@
   padding: 0.75rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   font: Montserrat, sans-serif;
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-color: #0066cc;
+}
+
+.card:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .card-image {
@@ -199,7 +211,7 @@
 .card-title {
   margin: 0;
   font-size: 1.5rem;
-  color: #0066cc;
+  color: #000;
   font: Montserrat, sans-serif;
 }
 
