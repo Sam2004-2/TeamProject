@@ -6,7 +6,6 @@ function CardDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [card, setCard] = useState(null);
-  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
   useEffect(() => {
     fetch('/data/cards.json')
@@ -15,27 +14,46 @@ function CardDetail() {
         const foundCard = data.find((item) => item.id === parseInt(id, 10));
         setCard(foundCard);
       })
-      .catch((error) => {
-        console.error('Error fetching card data:', error);
-      });
+      .catch((error) => console.error('Error fetching card data:', error));
   }, [id]);
 
   if (!card) {
     return <p>Loading...</p>;
   }
 
-  const { title, details } = card;
-  const { description, images } = details || {};
+  // Ensure details is an array
+  const detailsArray = Array.isArray(card.details) ? card.details : [card.details];
 
-  // Handle clicking on a thumbnail to switch the main image
+  return (
+    <div className="detail-page-container">
+      <div className="header-section">
+        <button onClick={() => navigate(-1)} className="back-button">
+          <img src="/icons/Back-Arrow.png" alt="Go back" className="back-icon" />
+        </button>
+        <h1 className="section-heading">{card.title}</h1>
+      </div>
+      <div className="details-scroll-container">
+        <div className="details-container">
+          {detailsArray.map((detail, index) => (
+            <DetailCard key={index} detail={detail} title={card.title} />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function DetailCard({ detail, title }) {
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const { description, images } = detail;
+
   const handleThumbnailClick = (index) => {
     setSelectedImageIndex(index);
   };
 
-  // Handle navigation between images
   const handlePreviousImage = () => {
     if (images && images.length > 0) {
-      setSelectedImageIndex((prevIndex) => 
+      setSelectedImageIndex((prevIndex) =>
         prevIndex === 0 ? images.length - 1 : prevIndex - 1
       );
     }
@@ -43,27 +61,14 @@ function CardDetail() {
 
   const handleNextImage = () => {
     if (images && images.length > 0) {
-      setSelectedImageIndex((prevIndex) => 
+      setSelectedImageIndex((prevIndex) =>
         prevIndex === images.length - 1 ? 0 : prevIndex + 1
       );
     }
   };
 
   return (
-    <div className="card-detail-container">
-      {/* Header section with back arrow and section heading */}
-      <div className="header-section">
-        <button onClick={() => navigate(-1)} className="back-button">
-          <img
-            src="/icons/Back-Arrow.png"
-            alt="Go back"
-            className="back-icon"
-          />
-        </button>
-        <h1 className="section-heading">{title}</h1>
-      </div>
-
-      {/* Top section: main image on the left, text on the right */}
+    <div className="detail-card">
       <div className="top-section">
         <div className="image-section">
           {images && images.length > 0 && (
@@ -75,18 +80,10 @@ function CardDetail() {
               />
               <div className="image-navigation">
                 <button className="nav-button prev-button" onClick={handlePreviousImage}>
-                  <img
-                    src="/icons/leftArrow.png"
-                    alt="Previous image"
-                    className="nav-icon"
-                  />
+                  <img src="/icons/leftArrow.png" alt="Previous image" className="nav-icon" />
                 </button>
                 <button className="nav-button next-button" onClick={handleNextImage}>
-                  <img
-                    src="/icons/rightArrow.png"
-                    alt="Next image"
-                    className="nav-icon"
-                  />
+                  <img src="/icons/rightArrow.png" alt="Next image" className="nav-icon" />
                 </button>
               </div>
             </div>
@@ -97,8 +94,6 @@ function CardDetail() {
           {description && <p className="task-description">{description}</p>}
         </div>
       </div>
-
-      {/* Bottom section: thumbnails row */}
       {images && images.length > 1 && (
         <div className="thumbnails-section">
           {images.map((imgSrc, idx) => (
