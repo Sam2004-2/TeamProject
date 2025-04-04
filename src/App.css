@@ -6,24 +6,23 @@
 
 .app-container {
   height: 100vh;
-  top: 0%;
-  left: 0%;
+  width: 100vw;
   display: flex;
-  position: fixed;
-  border: #fff;
-  border-width: 1px;
-  overflow-y: hidden;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  box-sizing: border-box;
 }
 
 .sidebar {
-  width: 350px;
+  width: 300px;
   height: 100%;
   background-color: #ffffff;
   position: fixed;
   top: 0;
   align-self: flex-start;
   overflow-y: hidden;
-  padding: 1rem;
+  padding: 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -95,22 +94,31 @@
 }
 
 .top-menu {
-  width: 70%;
+  width: calc(100% - 332px - 200px);  /* Increased logo space from 160px to 200px */
   height: 15%;
   display: flex;
   position: fixed;
   top: 0;
-  left: 382px;
+  left: 332px;
   z-index: 1;
   background-color: #fff;
   padding: 1rem;
-  gap: 2rem;
+  gap: 1rem;
   margin-bottom: 1rem;
   font: Montserrat, sans-serif;
+  justify-content: space-between;
+  padding-right: 3rem;  /* Increased from 2rem to 3rem */
+}
+
+/* Hide sidebar buttons in desktop view */
+.menu-item.plan-btn,
+.menu-item.goals-btn,
+.menu-item.notes-btn {
+  display: none;
 }
 
 .menu-item {
-  width: 25%;
+  flex: 1;  /* Each item takes equal space */
   height: 50%;
   text-align: center;
   padding: 1rem;
@@ -119,6 +127,7 @@
   font-size: 1.2rem;
   border-radius: 24px;
   cursor: pointer;
+  min-width: 0;  /* Allow items to shrink if needed */
 }
 
 .menu-icon {
@@ -151,33 +160,444 @@
 }
 
 .main-content {
-  width: 65%;
+  width: calc(100% - 332px);
   height: 75%;
   top: 20%;
-  left: 25%;
+  left: 332px;
   position: fixed;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .cards-grid {
-  height: 65vh;
-  overflow-y: scroll;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   padding: 1rem;
   scroll-behavior: smooth;
+  box-sizing: border-box;
 }
 
-@media (max-width: 768px) {
+.mobile-profile-section {
+  display: none; /* Hide by default */
+}
+
+@media (max-width: 1312px) and (min-width: 600px) {
+  .app-container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    position: fixed;
+    overflow: hidden;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .mobile-profile-section {
+    display: flex;
+    align-items: center;
+    padding-top: 0.75rem; /* Reduced from 1rem */
+    padding-left: 1rem;
+    padding-right: 0;
+    padding-bottom: 0;
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8vh;
+    z-index: 2;
+  }
+
+  .mobile-profile-pic {
+    width: 70px; /* Increased from 50px */
+    height: 70px; /* Increased from 50px */
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1rem;
+  }
+
+  .mobile-profile-name {
+    margin: 0;
+    font-size: 1.4rem; /* Increased from 1.2rem */
+    font-weight: bold;
+  }
+
+  .top-menu {
+    width: 100%;
+    left: 0;
+    height: auto;
+    padding: 0.25rem 1.5rem;
+    margin: 0;
+    position: fixed;
+    top: 10vh;
+    z-index: 1;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0.5rem;
+    height: 15.0625vh;
+  }
+
+  /* Show sidebar buttons in mobile view */
+  .menu-item.plan-btn,
+  .menu-item.goals-btn,
+  .menu-item.notes-btn {
+    display: block;
+  }
+
+  /* Base styles for all menu items in mobile view */
+  .menu-item {
+    width: 100%;
+    height: 100%;  /* Changed to take full height of grid cell */
+    padding: 0.15rem;
+    font-size: 0.8rem;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 24px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+    background-color: inherit;
+    flex-direction: row;
+  }
+
+  .menu-icon {
+    width: 14px;
+    height: 14px;
+    margin-right: 2px;
+    vertical-align: middle;
+    display: inline-block;  /* Ensure proper icon display */
+  }
+
+  /* Override any desktop styles */
+  .menu-item.plan-btn,
+  .menu-item.goals-btn,
+  .menu-item.notes-btn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 0.15rem !important;
+  }
+
+  .menu-item.messages {
+    background-color: #007aff;
+  }
+
+  .menu-item.media {
+    background-color: #e97e25;
+  }
+
+  .menu-item.calendar {
+    background-color: #fc0;
+  }
+
+  .menu-item.plan-btn {
+    background-color: #DD284A;
+  }
+
+  .menu-item.goals-btn {
+    background-color: #286E34;
+  }
+
+  .menu-item.notes-btn {
+    background-color: #7D56D6;
+  }
+
+  .main-content {
+    width: 100% !important;
+    left: 0 !important;
+    top: 25vh; /* Increased from 15vh to account for profile section (8vh) and nav bar (15vh) */
+    height: calc(100vh - 25vh); /* Adjusted height calculation */
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+  }
+
+  /* Override any desktop styles for card pages */
+  .main-content > div {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 1rem !important;
+    left: 0 !important;
+    position: relative !important;
+  }
+
+  /* Ensure card content takes full width */
+  .main-content .card {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 1rem !important;
+    box-sizing: border-box;
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 1rem 1.5rem 2rem 2rem;  /* Reduced top padding since we're using the nav bar height */
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
+  .card {
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .branding-top-right {
+    display: block;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 3;
+  }
+
+  .branding-top-right .branding-logo {
+    width: 70px !important; /* Match mobile profile image size */
+    height: auto !important;
+  }
+
+  .branding-bottom-right {
+    display: none;
+  }
+}
+
+@media (max-width: 679px) {
+  .app-container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    position: fixed;
+    overflow: hidden;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .mobile-profile-section {
+    display: flex;
+    align-items: center;
+    padding-top: 0.75rem; /* Reduced from 1rem */
+    padding-left: 1rem;
+    padding-right: 0;
+    padding-bottom: 0;
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 7vh;
+    z-index: 2;
+  }
+
+  .mobile-profile-pic {
+    width: 60px; /* Increased from 40px */
+    height: 60px; /* Increased from 40px */
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1rem;
+  }
+
+  .mobile-profile-name {
+    margin: 0;
+    font-size: 1.2rem; /* Increased from 1rem */
+    font-weight: bold;
+  }
+
+  .top-menu {
+    width: 100%;
+    left: 0;
+    height: auto;
+    padding: 0.25rem 1.5rem;
+    margin: 0;
+    position: fixed;
+    top: 9vh; /* Increased from 8vh to 9vh */
+    z-index: 1;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0.5rem;
+    height: 15vh;
+  }
+
+  /* Show sidebar buttons in mobile view */
+  .menu-item.plan-btn,
+  .menu-item.goals-btn,
+  .menu-item.notes-btn {
+    display: block;
+  }
+
+  /* Base styles for all menu items in mobile view */
+  .menu-item {
+    width: 100%;
+    height: 100%;  /* Changed to take full height of grid cell */
+    padding: 0.15rem;
+    font-size: 0.8rem;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 24px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+    background-color: inherit;
+    flex-direction: row;
+  }
+
+  .menu-icon {
+    width: 14px;
+    height: 14px;
+    margin-right: 2px;
+    vertical-align: middle;
+    display: inline-block;  /* Ensure proper icon display */
+  }
+
+  /* Override any desktop styles */
+  .menu-item.plan-btn,
+  .menu-item.goals-btn,
+  .menu-item.notes-btn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 0.15rem !important;
+  }
+
+  .menu-item.messages {
+    background-color: #007aff;
+  }
+
+  .menu-item.media {
+    background-color: #e97e25;
+  }
+
+  .menu-item.calendar {
+    background-color: #fc0;
+  }
+
+  .menu-item.plan-btn {
+    background-color: #DD284A;
+  }
+
+  .menu-item.goals-btn {
+    background-color: #286E34;
+  }
+
+  .menu-item.notes-btn {
+    background-color: #7D56D6;
+  }
+
+  .main-content {
+    width: 100% !important;
+    left: 0 !important;
+    top: 24vh; /* Increased from 15vh to account for profile section (7vh) and nav bar (15vh) */
+    height: calc(100vh - 24vh); /* Adjusted height calculation */
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+  }
+
   .cards-grid {
     grid-template-columns: repeat(1, 1fr);
-    gap: 0.5rem;
-    padding-right: 0;
+    gap: 1rem;
+    padding: 1rem 1.5rem 1rem 2.5rem;  /* Reduced top padding since we're using the nav bar height */
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
+  .card {
+    flex-direction: row;
+    align-items: center;
+    padding: 0.5rem;
+    height: auto;
+    min-height: 100px;
+    transition: all 0.2s ease;
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-color: #0066cc;
+  }
+
+  .card:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-image {
+    width: 80px;
+    height: 80px;
+    margin-right: 0.5rem;
+    margin-bottom: 0;
+    object-fit: cover;
+  }
+
+  .card-title {
+    font-size: 1rem;
+    padding: 0;
+    text-align: center;
+    width: calc(100% - 90px); /* 80px for image + 10px for margin */
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .branding-top-right {
+    display: block;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 3;
+  }
+
+  .branding-top-right .branding-logo {
+    width: 60px !important; /* Match mobile profile image size */
+    height: auto !important;
+  }
+
+  .branding-bottom-right {
+    display: none;
   }
 }
 
 .card {
-  height: 143px;
+  height: auto;
+  min-height: 143px;
   align-items: center;
   background-color: #fff;
   border: 1px solid #DD284A;
@@ -186,6 +606,9 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   font: Montserrat, sans-serif;
   transition: all 0.2s ease;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
 }
 
 .card:hover {
@@ -205,7 +628,7 @@
   object-fit: cover;
   border-radius: 4px;
   margin-right: 1rem;
-  float: left;
+  flex-shrink: 0;
 }
 
 .card-title {
@@ -213,12 +636,54 @@
   font-size: 1.5rem;
   color: #000;
   font: Montserrat, sans-serif;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
+@media (max-width: 679px) {
+  .card {
+    flex-direction: row;
+    align-items: center;
+    padding: 0.5rem;
+    height: auto;
+    min-height: 100px;
+    transition: all 0.2s ease;
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-color: #0066cc;
+  }
+
+  .card:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-image {
+    width: 80px;
+    height: 80px;
+    margin-right: 0.5rem;
+    margin-bottom: 0;
+    object-fit: cover;
+  }
+
+  .card-title {
+    font-size: 1rem;
+    padding: 0;
+    text-align: center;
+    width: calc(100% - 90px); /* 80px for image + 10px for margin */
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
 
 .branding-top-right {
   position: fixed;
-  z-index: 1;
+  z-index: 2;  /* Increased z-index to ensure logo stays on top */
   top: 1rem;
   right: 1rem;
 }
@@ -234,4 +699,57 @@
   height: auto;
   display: block;
   margin-bottom: 1rem;
+}
+
+.sjogbranding {
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.sjogbranding .branding-logo {
+  width: 150px;
+  height: 120px;
+  object-fit: contain;
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 1312px) {
+  .sjogbranding {
+    position: fixed;
+    top: 1.5rem;
+    right: 100px;
+    left: auto;
+    bottom: auto;
+    width: auto;
+    z-index: 3;
+  }
+
+  .sjogbranding .branding-logo {
+    width: 70px;
+    height: auto;
+  }
+}
+
+@media (max-width: 679px) {
+  .sjogbranding {
+    position: fixed;
+    top: 1.5rem;
+    right: 90px;
+    left: auto;
+    bottom: auto;
+    width: auto;
+    z-index: 3;
+  }
+
+  .sjogbranding .branding-logo {
+    width: 60px;
+    height: auto;
+  }
 }
