@@ -56,31 +56,47 @@ function App() {
 
         {/* NAV BAR */}
         <div className="top-menu">
-            <div className="menu-item messages">
-              <img
-                src="/icons/mail.svg"
-                alt="Messages Icon"
-                className="menu-icon"
-              />
-              Messages
-            </div>
-            <div className="menu-item media">
-              <img
-                src="/icons/photo_camera.svg"
-                alt="Media Icon"
-                className="menu-icon"
-              />
-              Media
-            </div>
-            <div className="menu-item calendar">
-              <img
-                src="/icons/calendar.svg"
-                alt="Calendar Icon"
-                className="menu-icon"
-              />
-              Calendar
-            </div>
+          <div className="menu-item messages">
+            <img
+              src="/icons/mail.svg"
+              alt="Messages Icon"
+              className="menu-icon"
+            />
+            Messages
+          </div>
+          <div className="menu-item media">
+            <img
+              src="/icons/photo_camera.svg"
+              alt="Media Icon"
+              className="menu-icon"
+            />
+            Media
+          </div>
+          <div className="menu-item calendar">
+            <img
+              src="/icons/calendar.svg"
+              alt="Calendar Icon"
+              className="menu-icon"
+            />
+            Calendar
+          </div>
 
+          {/* MOBILE VIEW NAV*/}
+          <button className="home-btn-mobile">
+            <img 
+              src="/icons/home.svg" 
+              alt="Home Icon" 
+              className="sidebar-icon"
+            />
+          </button>
+          <button className="plan-btn-mobile">
+            <img 
+              src="/icons/edit.svg" 
+              alt="Plan Icon" 
+              className="sidebar-icon"
+            /> 
+            <h2>Plan</h2>
+          </button>
             
         </div>
 
