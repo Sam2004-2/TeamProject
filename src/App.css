@@ -65,6 +65,18 @@
   font-weight: bold;
   border-radius: 24px;
   position: relative;
+  transition: all 0.2s ease;
+}
+
+.sidebar-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  filter: brightness(1.1);
+}
+
+.sidebar-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .sidebar-icon {
@@ -139,6 +151,18 @@
   cursor: pointer;
   min-width: 0;  /* Allow items to shrink if needed */
   position: relative;
+  transition: all 0.2s ease;
+}
+
+.menu-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  filter: brightness(1.1);
+}
+
+.menu-item:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .menu-icon {
@@ -772,4 +796,20 @@
   right: 1rem;
   height: 0.2em;
   background-color: #fff;
+}
+
+/* Common button effects for both sidebar and top menu */
+.sidebar-btn, .menu-item {
+  transition: all 0.2s ease;
+}
+
+.sidebar-btn:hover, .menu-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  filter: brightness(1.1);
+}
+
+.sidebar-btn:active, .menu-item:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
