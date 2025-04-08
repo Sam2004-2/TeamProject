@@ -1,17 +1,25 @@
 // src/App.jsx
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate, useLocation } from 'react-router-dom';
 import './App.css';
 import Card from './card';
 import CardDetail from './CardDetail'; // The new detail page
 import MediaPage from './MediaPage';
 import ProfilePage from './ProfilePage';
+import ScrollIndicator from './ScrollIndicator';
 
 function App() {
   const [cards, setCards] = useState([]);
   const navigate = useNavigate();
   const location = useLocation();
   const [currentPage, setCurrentPage] = useState('plan');
+  const [showScrollIndicator, setShowScrollIndicator] = useState(false);
+  const [isScrolling, setIsScrolling] = useState(false);
+  const mainContentRef = useRef(null);
+  const idleTimerRef = useRef(null);
+  const firstVisitRef = useRef(true);
+  const lastActivityTimeRef = useRef(Date.now());
+  const scrollTimeoutRef = useRef(null);
 
   // Update current page based on location
   useEffect(() => {
@@ -32,6 +40,100 @@ function App() {
       .then((data) => setCards(data))
       .catch((error) => console.error('Error fetching card data:', error));
   }, []);
+
+  // Show indicator on first visit
+  useEffect(() => {
+    if (firstVisitRef.current) {
+      firstVisitRef.current = false;
+      setShowScrollIndicator(true);
+    }
+  }, []);
+
+  // Handle user activity tracking
+  useEffect(() => {
+    const handleActivity = () => {
+      lastActivityTimeRef.current = Date.now();
+      
+      // Clear any existing idle timer
+      if (idleTimerRef.current) {
+        clearTimeout(idleTimerRef.current);
+        idleTimerRef.current = null;
+      }
+    };
+
+    // Add event listeners for user activity
+    window.addEventListener('mousemove', handleActivity);
+    window.addEventListener('keydown', handleActivity);
+    window.addEventListener('click', handleActivity);
+    window.addEventListener('scroll', handleActivity);
+
+    return () => {
+      window.removeEventListener('mousemove', handleActivity);
+      window.removeEventListener('keydown', handleActivity);
+      window.removeEventListener('click', handleActivity);
+      window.removeEventListener('scroll', handleActivity);
+      
+      if (idleTimerRef.current) {
+        clearTimeout(idleTimerRef.current);
+      }
+    };
+  }, []);
+
+  // Handle scroll detection and idle timer
+  useEffect(() => {
+    const handleScrollStart = () => {
+      setIsScrolling(true);
+      setShowScrollIndicator(false);
+      
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
+      
+      scrollTimeoutRef.current = setTimeout(() => {
+        setIsScrolling(false);
+      }, 100);
+    };
+    
+    const handleScroll = () => {
+      if (mainContentRef.current) {
+        const { scrollTop, scrollHeight, clientHeight } = mainContentRef.current;
+        const isScrollable = scrollHeight > clientHeight;
+        
+        const timeSinceLastActivity = Date.now() - lastActivityTimeRef.current;
+        if (timeSinceLastActivity > 3000 && isScrollable && !isScrolling) {
+          if (!idleTimerRef.current) {
+            idleTimerRef.current = setTimeout(() => {
+              setShowScrollIndicator(true);
+              idleTimerRef.current = null;
+            }, 3000);
+          }
+        }
+      }
+    };
+
+    const mainContent = mainContentRef.current;
+    if (mainContent) {
+      mainContent.addEventListener('wheel', handleScrollStart);
+      mainContent.addEventListener('touchmove', handleScrollStart);
+      mainContent.addEventListener('scroll', handleScroll);
+      
+      handleScroll();
+    }
+
+    return () => {
+      if (mainContent) {
+        mainContent.removeEventListener('wheel', handleScrollStart);
+        mainContent.removeEventListener('touchmove', handleScrollStart);
+        mainContent.removeEventListener('scroll', handleScroll);
+      }
+      if (idleTimerRef.current) {
+        clearTimeout(idleTimerRef.current);
+      }
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
+    };
+  }, [isScrolling]);
 
   const handlePlanClick = () => {
     navigate('/');
@@ -156,7 +258,7 @@ function App() {
       </div>
 
       {/* MAIN CONTENT */}
-      <main className="main-content">
+      <main className="main-content" ref={mainContentRef}>
         {/* Define our routes here */}
         <Routes>
           {/* HOME / CARD GRID */}
@@ -187,6 +289,11 @@ function App() {
           <Route path="/profile" element={<ProfilePage />} />
         </Routes>
       </main>
+
+      <ScrollIndicator 
+        visible={showScrollIndicator} 
+        isScrolling={isScrolling}
+      />
 
       {/* Branding */}
       <div className="branding-top-right">
