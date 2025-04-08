@@ -64,6 +64,7 @@
   border-radius: 6px;
   font-weight: bold;
   border-radius: 24px;
+  position: relative;
 }
 
 .sidebar-icon {
@@ -81,6 +82,15 @@
 .plan-btn {
   background-color: #DD284A;
   color: #fff;
+}
+
+.plan-btn .underline {
+  position: absolute;
+  bottom: 0.85rem;
+  left: 4rem;
+  right: 4rem;
+  height: 0.2em;
+  background-color: #fff;
 }
 
 .goals-btn {
@@ -128,6 +138,7 @@
   border-radius: 24px;
   cursor: pointer;
   min-width: 0;  /* Allow items to shrink if needed */
+  position: relative;
 }
 
 .menu-icon {
@@ -752,4 +763,13 @@
     width: 60px;
     height: auto;
   }
+}
+
+.menu-item.plan-btn .underline {
+  position: absolute;
+  bottom: 0.35rem;
+  left: 1rem;
+  right: 1rem;
+  height: 0.2em;
+  background-color: #fff;
 }

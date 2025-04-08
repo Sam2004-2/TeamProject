@@ -40,6 +40,7 @@ function App() {
             alt="Plan Icon" 
             className="sidebar-icon"
           /> Plan
+          <div className="underline"></div>
         </button>
         <button className="sidebar-btn goals-btn">
           <img 
@@ -101,6 +102,7 @@ function App() {
               className="menu-icon"
             />
             Plan
+            <div className="underline"></div>
           </div>
           <div className="menu-item goals-btn">
             <img
