@@ -8,6 +8,9 @@ import MediaPage from './MediaPage';
 import ProfilePage from './ProfilePage';
 import ScrollIndicator from './ScrollIndicator';
 
+// Developer toggle for scroll indicator
+const SCROLL_INDICATOR_ENABLED = true; // Set to false to disable the scroll indicator
+
 function App() {
   const [cards, setCards] = useState([]);
   const navigate = useNavigate();
@@ -43,7 +46,7 @@ function App() {
 
   // Show indicator on first visit
   useEffect(() => {
-    if (firstVisitRef.current) {
+    if (firstVisitRef.current && SCROLL_INDICATOR_ENABLED) {
       firstVisitRef.current = false;
       setShowScrollIndicator(true);
     }
@@ -100,7 +103,7 @@ function App() {
         const isScrollable = scrollHeight > clientHeight;
         
         const timeSinceLastActivity = Date.now() - lastActivityTimeRef.current;
-        if (timeSinceLastActivity > 3000 && isScrollable && !isScrolling) {
+        if (timeSinceLastActivity > 3000 && isScrollable && !isScrolling && SCROLL_INDICATOR_ENABLED) {
           if (!idleTimerRef.current) {
             idleTimerRef.current = setTimeout(() => {
               setShowScrollIndicator(true);
@@ -290,10 +293,12 @@ function App() {
         </Routes>
       </main>
 
-      <ScrollIndicator 
-        visible={showScrollIndicator} 
-        isScrolling={isScrolling}
-      />
+      {SCROLL_INDICATOR_ENABLED && (
+        <ScrollIndicator 
+          visible={showScrollIndicator} 
+          isScrolling={isScrolling}
+        />
+      )}
 
       {/* Branding */}
       <div className="branding-top-right">
