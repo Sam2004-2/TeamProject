@@ -46,35 +46,43 @@ function CardDetail() {
 function DetailCard({ detail, title }) {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const { description, images } = detail;
+  const navigate = useNavigate();
+
+  // Limit images array to maximum 5 images
+  const limitedImages = images ? images.slice(0, 5) : [];
 
   const handleThumbnailClick = (index) => {
     setSelectedImageIndex(index);
   };
 
   const handlePreviousImage = () => {
-    if (images && images.length > 0) {
+    if (limitedImages && limitedImages.length > 0) {
       setSelectedImageIndex((prevIndex) =>
-        prevIndex === 0 ? images.length - 1 : prevIndex - 1
+        prevIndex === 0 ? limitedImages.length - 1 : prevIndex - 1
       );
     }
   };
 
   const handleNextImage = () => {
-    if (images && images.length > 0) {
+    if (limitedImages && limitedImages.length > 0) {
       setSelectedImageIndex((prevIndex) =>
-        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+        prevIndex === limitedImages.length - 1 ? 0 : prevIndex + 1
       );
     }
+  };
+
+  const handleUploadClick = () => {
+    navigate('/media');
   };
 
   return (
     <div className="detail-card">
       <div className="top-section">
         <div className="image-section">
-          {images && images.length > 0 && (
+          {limitedImages && limitedImages.length > 0 && (
             <div className="image-container">
               <img
-                src={images[selectedImageIndex]}
+                src={limitedImages[selectedImageIndex]}
                 alt={`${title} - image ${selectedImageIndex + 1}`}
                 className="main-image"
               />
@@ -94,19 +102,28 @@ function DetailCard({ detail, title }) {
           {description && <p className="task-description">{description}</p>}
         </div>
       </div>
-      {images && images.length > 1 && (
-        <div className="thumbnails-section">
-          {images.map((imgSrc, idx) => (
-            <img
-              key={idx}
-              src={imgSrc}
-              alt={`${title} thumbnail ${idx + 1}`}
-              className={`thumbnail ${idx === selectedImageIndex ? 'selected' : ''}`}
-              onClick={() => handleThumbnailClick(idx)}
-            />
-          ))}
-        </div>
-      )}
+      <div className="thumbnails-section">
+        {limitedImages && limitedImages.length > 1 && (
+          <>
+            {limitedImages.map((imgSrc, idx) => (
+              <img
+                key={idx}
+                src={imgSrc}
+                alt={`${title} thumbnail ${idx + 1}`}
+                className={`thumbnail ${idx === selectedImageIndex ? 'selected' : ''}`}
+                onClick={() => handleThumbnailClick(idx)}
+              />
+            ))}
+          </>
+        )}
+        <button 
+          className="thumbnail upload-button"
+          onClick={handleUploadClick}
+          title="Upload more images"
+        >
+          <img src="/icons/upload_image.svg" alt="Upload more images" className="upload-icon" />
+        </button>
+      </div>
     </div>
   );
 }

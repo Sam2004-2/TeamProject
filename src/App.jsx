@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react
 import './App.css';
 import Card from './card';
 import CardDetail from './CardDetail'; // The new detail page
+import MediaPage from './MediaPage';
 
 function App() {
   const [cards, setCards] = useState([]);
@@ -146,6 +147,9 @@ function App() {
 
           {/* DETAIL PAGE FOR EACH CARD */}
           <Route path="/card/:id" element={<CardDetail />} />
+          
+          {/* MEDIA PAGE */}
+          <Route path="/media" element={<MediaPage />} />
         </Routes>
       </main>
 
