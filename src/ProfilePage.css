@@ -1,4 +1,4 @@
-.media-page-container {
+.profile-page-container {
   position: fixed;
   top: 20%;
   left: 25%;
@@ -58,7 +58,7 @@
   text-decoration-thickness: 2px;
 }
 
-.media-content {
+.profile-content {
   flex: 1;
   overflow-y: auto;
   padding: 2rem;
@@ -68,14 +68,14 @@
   gap: 1rem;
 }
 
-.media-page-heading {
+.profile-page-heading {
   font-size: 2rem;
   color: #333;
   text-align: center;
   margin: 0;
 }
 
-.media-subheading {
+.profile-subheading {
   font-size: 1.2rem;
   color: #666;
   text-align: center;
@@ -85,7 +85,7 @@
 
 /* Responsive adjustments */
 @media (max-width: 1312px) {
-  .media-page-container {
+  .profile-page-container {
     position: fixed;
     top: 0;
     left: 0;
@@ -113,21 +113,21 @@
     font-size: 1.5rem;
   }
 
-  .media-content {
+  .profile-content {
     padding: 1rem;
   }
 
-  .media-page-heading {
+  .profile-page-heading {
     font-size: 1.8rem;
   }
 
-  .media-subheading {
+  .profile-subheading {
     font-size: 1.1rem;
   }
 }
 
 @media (max-width: 599px) {
-  .media-page-container {
+  .profile-page-container {
     top: 30vh;
     height: 70vh;
   }

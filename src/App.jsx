@@ -1,14 +1,29 @@
 // src/App.jsx
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate, useLocation } from 'react-router-dom';
 import './App.css';
 import Card from './card';
 import CardDetail from './CardDetail'; // The new detail page
 import MediaPage from './MediaPage';
+import ProfilePage from './ProfilePage';
 
 function App() {
   const [cards, setCards] = useState([]);
   const navigate = useNavigate();
+  const location = useLocation();
+  const [currentPage, setCurrentPage] = useState('plan');
+
+  // Update current page based on location
+  useEffect(() => {
+    const path = location.pathname;
+    if (path === '/' || path.startsWith('/card/')) {
+      setCurrentPage('plan');
+    } else if (path === '/media') {
+      setCurrentPage('media');
+    } else if (path === '/profile') {
+      setCurrentPage('profile');
+    }
+  }, [location]);
 
   // Fetch card data from JSON once on mount
   useEffect(() => {
@@ -22,11 +37,19 @@ function App() {
     navigate('/');
   };
 
+  const handleProfileClick = () => {
+    navigate('/profile');
+  };
+
+  const handleMediaClick = () => {
+    navigate('/media');
+  };
+
   return (
     <div className="app-container">
       {/* SIDEBAR */}
       <aside className="sidebar">
-        <div className="profile-section">
+        <div className="profile-section" onClick={handleProfileClick}>
           <img
             src="https://media.istockphoto.com/id/1289220545/photo/beautiful-woman-smiling-with-crossed-arms.jpg?s=612x612&w=0&k=20&c=qmOTkGstKj1qN0zPVWj-n28oRA6_BHQN8uVLIXg0TF8="
             alt="Profile"
@@ -41,7 +64,7 @@ function App() {
             alt="Plan Icon" 
             className="sidebar-icon"
           /> Plan
-          <div className="underline"></div>
+          {currentPage === 'plan' && <div className="underline"></div>}
         </button>
         <button className="sidebar-btn goals-btn">
           <img 
@@ -49,6 +72,7 @@ function App() {
             alt="Goals Icon" 
             className="sidebar-icon"
           /> Goals
+          {currentPage === 'goals' && <div className="underline"></div>}
         </button>
         <button className="sidebar-btn notes-btn">
           <img 
@@ -56,18 +80,21 @@ function App() {
             alt="Notes Icon" 
             className="sidebar-icon"
           /> Notes
+          {currentPage === 'notes' && <div className="underline"></div>}
         </button>
       </nav>
       </aside>
 
       {/* MOBILE PROFILE SECTION */}
       <div className="mobile-profile-section">
-        <img
-          src="https://media.istockphoto.com/id/1289220545/photo/beautiful-woman-smiling-with-crossed-arms.jpg?s=612x612&w=0&k=20&c=qmOTkGstKj1qN0zPVWj-n28oRA6_BHQN8uVLIXg0TF8="
-          alt="Profile"
-          className="mobile-profile-pic"
-        />
-        <h3 className="mobile-profile-name">Laura King</h3>
+        <button className="mobile-profile-button" onClick={handleProfileClick}>
+          <img
+            src="https://media.istockphoto.com/id/1289220545/photo/beautiful-woman-smiling-with-crossed-arms.jpg?s=612x612&w=0&k=20&c=qmOTkGstKj1qN0zPVWj-n28oRA6_BHQN8uVLIXg0TF8="
+            alt="Profile"
+            className="mobile-profile-pic"
+          />
+          <h3 className="mobile-profile-name">Laura King</h3>
+        </button>
       </div>
 
       {/* NAV BAR */}
@@ -79,14 +106,16 @@ function App() {
               className="menu-icon"
             />
             Messages
+            {currentPage === 'messages' && <div className="underline"></div>}
           </div>
-          <div className="menu-item media">
+          <div className="menu-item media" onClick={handleMediaClick}>
             <img
               src="/icons/photo_camera.svg"
               alt="Media Icon"
               className="menu-icon"
             />
             Media
+            {currentPage === 'media' && <div className="underline"></div>}
           </div>
           <div className="menu-item calendar">
             <img
@@ -95,6 +124,7 @@ function App() {
               className="menu-icon"
             />
             Calendar
+            {currentPage === 'calendar' && <div className="underline"></div>}
           </div>
           <div className="menu-item plan-btn" onClick={handlePlanClick}>
             <img
@@ -103,7 +133,7 @@ function App() {
               className="menu-icon"
             />
             Plan
-            <div className="underline"></div>
+            {currentPage === 'plan' && <div className="underline"></div>}
           </div>
           <div className="menu-item goals-btn">
             <img
@@ -112,6 +142,7 @@ function App() {
               className="menu-icon"
             />
             Goals
+            {currentPage === 'goals' && <div className="underline"></div>}
           </div>
           <div className="menu-item notes-btn">
             <img
@@ -120,6 +151,7 @@ function App() {
               className="menu-icon"
             />
             Notes
+            {currentPage === 'notes' && <div className="underline"></div>}
           </div>
       </div>
 
@@ -150,6 +182,9 @@ function App() {
           
           {/* MEDIA PAGE */}
           <Route path="/media" element={<MediaPage />} />
+          
+          {/* PROFILE PAGE */}
+          <Route path="/profile" element={<ProfilePage />} />
         </Routes>
       </main>
 
