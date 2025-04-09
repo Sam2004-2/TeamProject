@@ -55,11 +55,12 @@ function CardDetail() {
 
 function DetailCard({ detail, title }) {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-  const { description, images, subheading } = detail;
+  const { description, images, subheading, imageDescriptions } = detail;
   const navigate = useNavigate();
 
   // Limit images array to maximum 5 images
   const limitedImages = images ? images.slice(0, 5) : [];
+  const limitedDescriptions = imageDescriptions ? imageDescriptions.slice(0, 5) : [];
 
   const handleThumbnailClick = (index) => {
     setSelectedImageIndex(index);
@@ -85,6 +86,14 @@ function DetailCard({ detail, title }) {
     navigate('/media');
   };
 
+  // Get the image description or use a default
+  const getImageDescription = (index) => {
+    if (limitedDescriptions && limitedDescriptions[index]) {
+      return limitedDescriptions[index];
+    }
+    return `Main image for ${subheading || "Sub-heading"}`;
+  };
+
   return (
     <div className="detail-card">
       <div className="top-section">
@@ -93,7 +102,7 @@ function DetailCard({ detail, title }) {
             <div className="image-container">
               <img
                 src={limitedImages[selectedImageIndex]}
-                alt={`${title} - image ${selectedImageIndex + 1}`}
+                alt={getImageDescription(selectedImageIndex)}
                 className="main-image"
               />
               <div className="image-navigation">
