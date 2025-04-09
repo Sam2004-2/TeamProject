@@ -129,7 +129,10 @@ function DetailCard({ detail, title }) {
               <img
                 key={idx}
                 src={imgSrc}
-                alt={`${subheading || "Sub-heading"} Image ${idx + 1}: ${limitedDescriptions && limitedDescriptions[idx] ? limitedDescriptions[idx] : "Main image"}`}
+                alt={idx === selectedImageIndex 
+                  ? `Currently selected image: ${limitedDescriptions && limitedDescriptions[idx] ? limitedDescriptions[idx] : "Main image"}`
+                  : `${subheading || "Sub-heading"} Image ${idx + 1}: ${limitedDescriptions && limitedDescriptions[idx] ? limitedDescriptions[idx] : "Main image"}`
+                }
                 className={`thumbnail ${idx === selectedImageIndex ? 'selected' : ''}`}
                 onClick={() => handleThumbnailClick(idx)}
               />
