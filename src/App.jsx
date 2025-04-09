@@ -239,7 +239,7 @@ function App() {
           tabIndex="2"
           role="button"
           aria-label="Messages"
-          aria-current={currentPage === 'messages' ? 'page' : undefined}
+          aria-current={currentPage === 'messages' ? `page: Messages` : undefined}
         >
           <img
             src="/icons/mail.svg"
@@ -256,7 +256,7 @@ function App() {
           tabIndex="3"
           role="button"
           aria-label="Media"
-          aria-current={currentPage === 'media' ? 'page' : undefined}
+          aria-current={currentPage === 'media' ? `page: Media` : undefined}
         >
           <img
             src="/icons/photo_camera.svg"
@@ -272,7 +272,7 @@ function App() {
           tabIndex="4"
           role="button"
           aria-label="Calendar"
-          aria-current={currentPage === 'calendar' ? 'page' : undefined}
+          aria-current={currentPage === 'calendar' ? `page: Calendar` : undefined}
         >
           <img
             src="/icons/calendar.svg"
@@ -289,7 +289,7 @@ function App() {
           tabIndex="5"
           role="button"
           aria-label="Plan"
-          aria-current={currentPage === 'plan' ? 'page' : undefined}
+          aria-current={currentPage === 'plan' ? `page: Plan` : undefined}
         >
           <img
             src="/icons/edit.svg"
@@ -305,7 +305,7 @@ function App() {
           tabIndex="6"
           role="button"
           aria-label="Goals"
-          aria-current={currentPage === 'goals' ? 'page' : undefined}
+          aria-current={currentPage === 'goals' ? `page: Goals` : undefined}
         >
           <img
             src="/icons/event_lists.svg"
@@ -321,7 +321,7 @@ function App() {
           tabIndex="7"
           role="button"
           aria-label="Notes"
-          aria-current={currentPage === 'notes' ? 'page' : undefined}
+          aria-current={currentPage === 'notes' ? `page: Notes` : undefined}
         >
           <img
             src="/icons/sticky_note_2.svg"
@@ -339,7 +339,7 @@ function App() {
         className="main-content" 
         ref={mainContentRef}
         role="main"
-        aria-label="Main content area"
+        aria-label="Plan sections navigation"
       >
         {/* Define our routes here */}
         <Routes>
@@ -353,8 +353,8 @@ function App() {
                     key={item.id}
                     to={`/card/${item.id}`}
                     style={{ textDecoration: 'none' }}
-                    role="listitem"
-                    aria-label={item.title}
+                    role="button"
+                    aria-label={`Go to ${item.title} section`}
                   >
                     <Card title={item.title} image={item.image} />
                   </Link>
