@@ -159,7 +159,7 @@ function App() {
           onClick={handleProfileClick}
           role="button"
           tabIndex="1"
-          aria-label="View profile for Laura King"
+          aria-label="Profile for Laura King"
         >
           <img
             src="https://media.istockphoto.com/id/1289220545/photo/beautiful-woman-smiling-with-crossed-arms.jpg?s=612x612&w=0&k=20&c=qmOTkGstKj1qN0zPVWj-n28oRA6_BHQN8uVLIXg0TF8="
@@ -173,7 +173,7 @@ function App() {
             className="sidebar-btn plan-btn" 
             onClick={handlePlanClick}
             tabIndex="8"
-            aria-label="View plan"
+            aria-label="Plan"
             aria-current={currentPage === 'plan' ? 'page' : undefined}
           >
             <img 
@@ -187,7 +187,7 @@ function App() {
           <button 
             className="sidebar-btn goals-btn"
             tabIndex="9"
-            aria-label="View goals"
+            aria-label="Goals"
             aria-current={currentPage === 'goals' ? 'page' : undefined}
           >
             <img 
@@ -201,7 +201,7 @@ function App() {
           <button 
             className="sidebar-btn notes-btn"
             tabIndex="10"
-            aria-label="View notes"
+            aria-label="Notes"
             aria-current={currentPage === 'notes' ? 'page' : undefined}
           >
             <img 
@@ -221,7 +221,7 @@ function App() {
           className="mobile-profile-button" 
           onClick={handleProfileClick}
           tabIndex="1"
-          aria-label="View profile for Laura King"
+          aria-label="Profile for Laura King"
         >
           <img
             src="https://media.istockphoto.com/id/1289220545/photo/beautiful-woman-smiling-with-crossed-arms.jpg?s=612x612&w=0&k=20&c=qmOTkGstKj1qN0zPVWj-n28oRA6_BHQN8uVLIXg0TF8="
@@ -238,7 +238,7 @@ function App() {
           className="menu-item messages"
           tabIndex="2"
           role="button"
-          aria-label="View messages"
+          aria-label="Messages"
           aria-current={currentPage === 'messages' ? 'page' : undefined}
         >
           <img
@@ -255,7 +255,7 @@ function App() {
           onClick={handleMediaClick}
           tabIndex="3"
           role="button"
-          aria-label="View media"
+          aria-label="Media"
           aria-current={currentPage === 'media' ? 'page' : undefined}
         >
           <img
@@ -271,7 +271,7 @@ function App() {
           className="menu-item calendar"
           tabIndex="4"
           role="button"
-          aria-label="View calendar"
+          aria-label="Calendar"
           aria-current={currentPage === 'calendar' ? 'page' : undefined}
         >
           <img
@@ -288,7 +288,7 @@ function App() {
           onClick={handlePlanClick}
           tabIndex="5"
           role="button"
-          aria-label="View plan"
+          aria-label="Plan"
           aria-current={currentPage === 'plan' ? 'page' : undefined}
         >
           <img
@@ -304,7 +304,7 @@ function App() {
           className="menu-item goals-btn"
           tabIndex="6"
           role="button"
-          aria-label="View goals"
+          aria-label="Goals"
           aria-current={currentPage === 'goals' ? 'page' : undefined}
         >
           <img
@@ -320,7 +320,7 @@ function App() {
           className="menu-item notes-btn"
           tabIndex="7"
           role="button"
-          aria-label="View notes"
+          aria-label="Notes"
           aria-current={currentPage === 'notes' ? 'page' : undefined}
         >
           <img
@@ -347,12 +347,14 @@ function App() {
           <Route
             path="/"
             element={
-              <div className="cards-grid">
+              <div className="cards-grid" role="list" aria-label="Plan Sections">
                 {cards.map((item) => (
                   <Link
                     key={item.id}
                     to={`/card/${item.id}`}
                     style={{ textDecoration: 'none' }}
+                    role="listitem"
+                    aria-label={item.title}
                   >
                     <Card title={item.title} image={item.image} />
                   </Link>

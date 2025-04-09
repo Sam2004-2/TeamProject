@@ -10,7 +10,7 @@ function Card({ title, image }) {
         className="card-image" 
         aria-hidden="true"
       />
-      <h4 className="card-title" id={`card-title-${title}`}>{title}</h4>
+      <h4 className="card-title">{title}</h4>
     </div>
   );
 }

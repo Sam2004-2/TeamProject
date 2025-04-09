@@ -622,7 +622,7 @@
   .cards-grid {
     grid-template-columns: repeat(1, 1fr);
     gap: 2rem;
-    padding: 1rem 1.5rem 1rem 2.5rem;
+    padding: 1rem 1.5rem 1rem 1.75rem;  /* Reduced left padding from 2.5rem to 1.75rem to make content more centered */
     margin: 0;
     width: 100%;
     height: 100%;
