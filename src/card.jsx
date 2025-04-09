@@ -10,7 +10,7 @@ function Card({ title, image }) {
         className="card-image" 
         aria-hidden="true"
       />
-      <div className="card-title">{title}</div>
+      <h4 className="card-title" aria-hidden="true">{title}</h4>
     </div>
   );
 }

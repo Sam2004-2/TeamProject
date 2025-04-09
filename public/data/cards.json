@@ -5,6 +5,7 @@
     "image": "/images/History.png",
     "details": [
       {
+        "subheading": "Testing subheading",
         "description": "Here is some background about me, including my personal history and profile information.",
         "images": [
           "https://st2.depositphotos.com/7865540/10804/i/450/depositphotos_108042688-stock-photo-torn-brown-paper.jpg",
@@ -16,6 +17,7 @@
         ]
       },
       {
+        "subheading": "",
         "description": "Additional background details can go here.",
         "images": [
           "/images/History.png",
@@ -229,7 +231,7 @@
   },
   {
     "id": 12,
-    "title": "What Is and Isn’t Working",
+    "title": "What Is and Isn't Working",
     "image": "/images/Working.jpg",
     "details": [
       {

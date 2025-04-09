@@ -55,7 +55,7 @@
 }
 
 /* Mobile styles */
-@media (max-width: 1312px) {
+@media (max-width: 1340px) {
   .scroll-indicator {
     left: 50%;
     transform: translateX(-50%);

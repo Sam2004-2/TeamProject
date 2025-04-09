@@ -354,7 +354,7 @@ function App() {
                     to={`/card/${item.id}`}
                     style={{ textDecoration: 'none' }}
                     role="button"
-                    aria-label={`Go to ${item.title} section`}
+                    aria-label={`${item.title} section`}
                   >
                     <Card title={item.title} image={item.image} />
                   </Link>
@@ -386,6 +386,7 @@ function App() {
         <img
           src="https://aspirico.com/wp-content/uploads/2023/01/iplanit-with-tagline-01-011.png"
           alt="iplanit"
+          aria-label={`iplanit - ${currentPage === 'plan' ? 'Plan Sections' : currentPage === 'media' ? 'Media Page' : 'Profile Page'}`}
           className="branding-logo"
         />
       </div>

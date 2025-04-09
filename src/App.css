@@ -273,13 +273,13 @@
   transform: scale(0.98);
 }
 
-@media (max-width: 1312px) {
+@media (max-width: 1340px) {
   .mobile-profile-section {
     display: flex;
   }
 }
 
-@media (max-width: 1312px) and (min-width: 600px) {
+@media (max-width: 1340px) and (min-width: 600px) {
   .app-container {
     height: 100vh;
     width: 100vw;
@@ -443,7 +443,7 @@
   .cards-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    padding: 1rem 1.5rem 2rem 2rem;
+    padding: 1rem 1rem 2rem 1.5rem;  /* Left padding 1.5rem, right padding 1rem */
     margin: 0;
     width: 100%;
     height: 100%;
@@ -622,7 +622,7 @@
   .cards-grid {
     grid-template-columns: repeat(1, 1fr);
     gap: 2rem;
-    padding: 1rem 1.5rem 1rem 1.5rem;  /* Made left padding equal to right padding (1.5rem) */
+    padding: 1rem 1.5rem 2rem 1rem;  /* Left padding 1rem, right padding 1.5rem */
     margin: 0;
     width: 100%;
     height: 100%;
@@ -813,7 +813,7 @@
   margin: 0;
 }
 
-@media (max-width: 1312px) {
+@media (max-width: 1340px) {
   .sjogbranding {
     position: fixed;
     top: 1.5rem;

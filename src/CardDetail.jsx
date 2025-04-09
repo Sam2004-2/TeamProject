@@ -39,13 +39,23 @@ function CardDetail() {
           ))}
         </div>
       </div>
+      
+      {/* Add branding with section title for screen readers */}
+      <div className="branding-top-right" aria-hidden="true">
+        <img
+          src="https://aspirico.com/wp-content/uploads/2023/01/iplanit-with-tagline-01-011.png"
+          alt="iplanit"
+          aria-label={`iplanit - ${card.title}`}
+          className="branding-logo"
+        />
+      </div>
     </div>
   );
 }
 
 function DetailCard({ detail, title }) {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-  const { description, images } = detail;
+  const { description, images, subheading } = detail;
   const navigate = useNavigate();
 
   // Limit images array to maximum 5 images
@@ -98,7 +108,7 @@ function DetailCard({ detail, title }) {
           )}
         </div>
         <div className="text-section">
-          <h2 className="task-title">Sub-heading</h2>
+          <h2 className="task-title">{subheading || "Sub-heading"}</h2>
           {description && <p className="task-description">{description}</p>}
         </div>
       </div>

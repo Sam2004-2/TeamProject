@@ -84,7 +84,7 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 1312px) {
+@media (max-width: 1340px) {
   .profile-page-container {
     position: fixed;
     top: 0;
