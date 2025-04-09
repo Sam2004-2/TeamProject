@@ -45,7 +45,7 @@ function CardDetail() {
         <img
           src="https://aspirico.com/wp-content/uploads/2023/01/iplanit-with-tagline-01-011.png"
           alt="iplanit"
-          aria-label={`iplanit - ${card.title}`}
+          aria-label={`iplanit logo`}
           className="branding-logo"
         />
       </div>
@@ -88,10 +88,11 @@ function DetailCard({ detail, title }) {
 
   // Get the image description or use a default
   const getImageDescription = (index) => {
+    const subheadingText = subheading || "Sub-heading";
     if (limitedDescriptions && limitedDescriptions[index]) {
-      return limitedDescriptions[index];
+      return `${subheadingText} Image: ${limitedDescriptions[index]}`;
     }
-    return `Main image for ${subheading || "Sub-heading"}`;
+    return `${subheadingText} Image: Main image`;
   };
 
   return (
@@ -128,7 +129,7 @@ function DetailCard({ detail, title }) {
               <img
                 key={idx}
                 src={imgSrc}
-                alt={`${title} thumbnail ${idx + 1}`}
+                alt={`${subheading || "Sub-heading"} Image ${idx + 1}: ${limitedDescriptions && limitedDescriptions[idx] ? limitedDescriptions[idx] : "Main image"}`}
                 className={`thumbnail ${idx === selectedImageIndex ? 'selected' : ''}`}
                 onClick={() => handleThumbnailClick(idx)}
               />
