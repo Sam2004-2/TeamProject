@@ -151,51 +151,81 @@ function App() {
   };
 
   return (
-    <div className="app-container">
+    <div className="app-container" role="application">
       {/* SIDEBAR */}
-      <aside className="sidebar">
-        <div className="profile-section" onClick={handleProfileClick}>
+      <aside className="sidebar" role="complementary" aria-label="Main navigation">
+        <div 
+          className="profile-section" 
+          onClick={handleProfileClick}
+          role="button"
+          tabIndex="1"
+          aria-label="View profile for Laura King"
+        >
           <img
             src="https://media.istockphoto.com/id/1289220545/photo/beautiful-woman-smiling-with-crossed-arms.jpg?s=612x612&w=0&k=20&c=qmOTkGstKj1qN0zPVWj-n28oRA6_BHQN8uVLIXg0TF8="
-            alt="Profile"
+            alt="Profile picture of Laura King"
             className="profile-pic"
           />
           <h3 className="profile-name">Laura King</h3>
         </div>
-      <nav className="sidebar-menu">
-        <button className="sidebar-btn plan-btn" onClick={handlePlanClick}>
-          <img 
-            src="/icons/edit.svg" 
-            alt="Plan Icon" 
-            className="sidebar-icon"
-          /> Plan
-          {currentPage === 'plan' && <div className="underline"></div>}
-        </button>
-        <button className="sidebar-btn goals-btn">
-          <img 
-            src="/icons/event_lists.svg" 
-            alt="Goals Icon" 
-            className="sidebar-icon"
-          /> Goals
-          {currentPage === 'goals' && <div className="underline"></div>}
-        </button>
-        <button className="sidebar-btn notes-btn">
-          <img 
-            src="/icons/sticky_note_2.svg" 
-            alt="Notes Icon" 
-            className="sidebar-icon"
-          /> Notes
-          {currentPage === 'notes' && <div className="underline"></div>}
-        </button>
-      </nav>
+        <nav className="sidebar-menu" role="navigation" aria-label="Sidebar navigation">
+          <button 
+            className="sidebar-btn plan-btn" 
+            onClick={handlePlanClick}
+            tabIndex="8"
+            aria-label="View plan"
+            aria-current={currentPage === 'plan' ? 'page' : undefined}
+          >
+            <img 
+              src="/icons/edit.svg" 
+              alt="" 
+              className="sidebar-icon"
+              aria-hidden="true"
+            /> Plan
+            {currentPage === 'plan' && <div className="underline" aria-hidden="true"></div>}
+          </button>
+          <button 
+            className="sidebar-btn goals-btn"
+            tabIndex="9"
+            aria-label="View goals"
+            aria-current={currentPage === 'goals' ? 'page' : undefined}
+          >
+            <img 
+              src="/icons/event_lists.svg" 
+              alt="" 
+              className="sidebar-icon"
+              aria-hidden="true"
+            /> Goals
+            {currentPage === 'goals' && <div className="underline" aria-hidden="true"></div>}
+          </button>
+          <button 
+            className="sidebar-btn notes-btn"
+            tabIndex="10"
+            aria-label="View notes"
+            aria-current={currentPage === 'notes' ? 'page' : undefined}
+          >
+            <img 
+              src="/icons/sticky_note_2.svg" 
+              alt="" 
+              className="sidebar-icon"
+              aria-hidden="true"
+            /> Notes
+            {currentPage === 'notes' && <div className="underline" aria-hidden="true"></div>}
+          </button>
+        </nav>
       </aside>
 
       {/* MOBILE PROFILE SECTION */}
-      <div className="mobile-profile-section">
-        <button className="mobile-profile-button" onClick={handleProfileClick}>
+      <div className="mobile-profile-section" role="banner">
+        <button 
+          className="mobile-profile-button" 
+          onClick={handleProfileClick}
+          tabIndex="1"
+          aria-label="View profile for Laura King"
+        >
           <img
             src="https://media.istockphoto.com/id/1289220545/photo/beautiful-woman-smiling-with-crossed-arms.jpg?s=612x612&w=0&k=20&c=qmOTkGstKj1qN0zPVWj-n28oRA6_BHQN8uVLIXg0TF8="
-            alt="Profile"
+            alt="Profile picture of Laura King"
             className="mobile-profile-pic"
           />
           <h3 className="mobile-profile-name">Laura King</h3>
@@ -203,65 +233,114 @@ function App() {
       </div>
 
       {/* NAV BAR */}
-      <div className="top-menu">
-          <div className="menu-item messages">
-            <img
-              src="/icons/mail.svg"
-              alt="Messages Icon"
-              className="menu-icon"
-            />
-            Messages
-            {currentPage === 'messages' && <div className="underline"></div>}
-          </div>
-          <div className="menu-item media" onClick={handleMediaClick}>
-            <img
-              src="/icons/photo_camera.svg"
-              alt="Media Icon"
-              className="menu-icon"
-            />
-            Media
-            {currentPage === 'media' && <div className="underline"></div>}
-          </div>
-          <div className="menu-item calendar">
-            <img
-              src="/icons/calendar.svg"
-              alt="Calendar Icon"
-              className="menu-icon"
-            />
-            Calendar
-            {currentPage === 'calendar' && <div className="underline"></div>}
-          </div>
-          <div className="menu-item plan-btn" onClick={handlePlanClick}>
-            <img
-              src="/icons/edit.svg"
-              alt="Plan Icon"
-              className="menu-icon"
-            />
-            Plan
-            {currentPage === 'plan' && <div className="underline"></div>}
-          </div>
-          <div className="menu-item goals-btn">
-            <img
-              src="/icons/event_lists.svg"
-              alt="Goals Icon"
-              className="menu-icon"
-            />
-            Goals
-            {currentPage === 'goals' && <div className="underline"></div>}
-          </div>
-          <div className="menu-item notes-btn">
-            <img
-              src="/icons/sticky_note_2.svg"
-              alt="Notes Icon"
-              className="menu-icon"
-            />
-            Notes
-            {currentPage === 'notes' && <div className="underline"></div>}
-          </div>
-      </div>
+      <nav className="top-menu" role="navigation" aria-label="Top navigation">
+        <div 
+          className="menu-item messages"
+          tabIndex="2"
+          role="button"
+          aria-label="View messages"
+          aria-current={currentPage === 'messages' ? 'page' : undefined}
+        >
+          <img
+            src="/icons/mail.svg"
+            alt=""
+            className="menu-icon"
+            aria-hidden="true"
+          />
+          Messages
+          {currentPage === 'messages' && <div className="underline" aria-hidden="true"></div>}
+        </div>
+        <div 
+          className="menu-item media" 
+          onClick={handleMediaClick}
+          tabIndex="3"
+          role="button"
+          aria-label="View media"
+          aria-current={currentPage === 'media' ? 'page' : undefined}
+        >
+          <img
+            src="/icons/photo_camera.svg"
+            alt=""
+            className="menu-icon"
+            aria-hidden="true"
+          />
+          Media
+          {currentPage === 'media' && <div className="underline" aria-hidden="true"></div>}
+        </div>
+        <div 
+          className="menu-item calendar"
+          tabIndex="4"
+          role="button"
+          aria-label="View calendar"
+          aria-current={currentPage === 'calendar' ? 'page' : undefined}
+        >
+          <img
+            src="/icons/calendar.svg"
+            alt=""
+            className="menu-icon"
+            aria-hidden="true"
+          />
+          Calendar
+          {currentPage === 'calendar' && <div className="underline" aria-hidden="true"></div>}
+        </div>
+        <div 
+          className="menu-item plan-btn" 
+          onClick={handlePlanClick}
+          tabIndex="5"
+          role="button"
+          aria-label="View plan"
+          aria-current={currentPage === 'plan' ? 'page' : undefined}
+        >
+          <img
+            src="/icons/edit.svg"
+            alt=""
+            className="menu-icon"
+            aria-hidden="true"
+          />
+          Plan
+          {currentPage === 'plan' && <div className="underline" aria-hidden="true"></div>}
+        </div>
+        <div 
+          className="menu-item goals-btn"
+          tabIndex="6"
+          role="button"
+          aria-label="View goals"
+          aria-current={currentPage === 'goals' ? 'page' : undefined}
+        >
+          <img
+            src="/icons/event_lists.svg"
+            alt=""
+            className="menu-icon"
+            aria-hidden="true"
+          />
+          Goals
+          {currentPage === 'goals' && <div className="underline" aria-hidden="true"></div>}
+        </div>
+        <div 
+          className="menu-item notes-btn"
+          tabIndex="7"
+          role="button"
+          aria-label="View notes"
+          aria-current={currentPage === 'notes' ? 'page' : undefined}
+        >
+          <img
+            src="/icons/sticky_note_2.svg"
+            alt=""
+            className="menu-icon"
+            aria-hidden="true"
+          />
+          Notes
+          {currentPage === 'notes' && <div className="underline" aria-hidden="true"></div>}
+        </div>
+      </nav>
 
       {/* MAIN CONTENT */}
-      <main className="main-content" ref={mainContentRef}>
+      <main 
+        className="main-content" 
+        ref={mainContentRef}
+        role="main"
+        aria-label="Main content area"
+      >
         {/* Define our routes here */}
         <Routes>
           {/* HOME / CARD GRID */}
@@ -304,7 +383,7 @@ function App() {
       <div className="branding-top-right">
         <img
           src="https://aspirico.com/wp-content/uploads/2023/01/iplanit-with-tagline-01-011.png"
-          alt="iplanit by Aspirico"
+          alt="iplanit"
           className="branding-logo"
         />
       </div>
@@ -312,7 +391,7 @@ function App() {
       <div className="sjogbranding">
         <img
           src="https://www.sjog.ie/wp-content/uploads/2024/01/Parent.svg"
-          alt="St John of God"
+          alt="Saint John of God"
           className="branding-logo"
         />
       </div>
