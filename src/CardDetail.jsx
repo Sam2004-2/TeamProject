@@ -142,9 +142,9 @@ function DetailCard({ detail, title }) {
         <button 
           className="thumbnail upload-button"
           onClick={handleUploadClick}
-          title="Upload more images"
+          title="Upload/change images"
         >
-          <img src="/icons/upload_image.svg" alt="Upload more images" className="upload-icon" />
+          <img src="/icons/upload_image.svg" alt="Upload or change images" className="upload-icon" />
         </button>
       </div>
     </div>
