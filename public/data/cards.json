@@ -6,14 +6,13 @@
     "details": [
       {
         "subheading": "About Me",
-        "description": "Here is some background about me, including my personal history and profile information.",
+        "description": "I am a unique individual with my own story to tell. I have many interests and talents that make me who I am. I enjoy learning new things and sharing my experiences with others. My personality is shaped by my life experiences and the people who have supported me along the way. I believe in being kind to others and making a positive difference in the world around me.",
         "images": [
-          "https://st2.depositphotos.com/7865540/10804/i/450/depositphotos_108042688-stock-photo-torn-brown-paper.jpg",
-          "https://st2.depositphotos.com/7865540/10804/i/450/depositphotos_108042688-stock-photo-torn-brown-paper.jpg",
-          "https://st2.depositphotos.com/3837271/7341/i/450/depositphotos_73417885-stock-photo-my-story-text-sign.jpg",
-          "https://st2.depositphotos.com/7865540/10804/i/450/depositphotos_108042688-stock-photo-torn-brown-paper.jpg",
-          "https://st2.depositphotos.com/7865540/10804/i/450/depositphotos_108042688-stock-photo-torn-brown-paper.jpg",
-          "https://st2.depositphotos.com/3837271/7341/i/450/depositphotos_73417885-stock-photo-my-story-text-sign.jpg"
+          "https://media.istockphoto.com/id/1289220545/photo/beautiful-woman-smiling-with-crossed-arms.jpg?s=612x612&w=0&k=20&c=qmOTkGstKj1qN0zPVWj-n28oRA6_BHQN8uVLIXg0TF8=",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlafd0dhyrxy_zLlV3MN0Vbp_l6R5hHLg-5g&s",
+          "https://www.datocms-assets.com/12810/1680617938-kathy-easley-my-story.jpg?auto=format&fit=max&w=1200",
+          "https://media.baamboozle.com/uploads/images/504516/1633358951_37855_url.jpeg",
+          "https://media.licdn.com/dms/image/v2/D5612AQFjEmWljLYzoQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1682640172514?e=2147483647&v=beta&t=0B8GLHkm7uwYlFrpdhT9MWNSkbVCUHtD2J9J-XOnVO8"
         ],
         "imageDescriptions": [
           "A torn brown paper background",
@@ -26,14 +25,28 @@
       },
       {
         "subheading": "My History",
-        "description": "Additional background details can go here.",
+        "description": "My journey has been filled with many meaningful experiences. I've grown and learned from each chapter of my life. From my early years to where I am now, every experience has helped shape me into the person I am today. I've faced challenges that have made me stronger and celebrated achievements that have brought me joy. My history includes important milestones, relationships, and moments that have had a significant impact on my life.",
         "images": [
-          "/images/History.png",
-          "https://st2.depositphotos.com/7865540/10804/i/450/depositphotos_108042688-stock-photo-torn-brown-paper.jpg",
-          "https://st2.depositphotos.com/3837271/7341/i/450/depositphotos_73417885-stock-photo-my-story-text-sign.jpg"
+          "https://st2.depositphotos.com/3837271/7341/i/450/depositphotos_73417885-stock-photo-my-story-text-sign.jpg",
+          "https://assets.ltkcontent.com/images/31106/biography-book-life-story_27c5571306.jpg",
+          "https://cdn.tinybuddha.com/wp-content/uploads/2018/07/New-chapter.jpg"
         ],
         "imageDescriptions": [
           "History section image",
+          "Torn paper background",
+          "My Story sign"
+        ]
+      },
+      {
+        "subheading": "My Profile",
+        "description": "I have unique qualities and characteristics that make me special. My strengths include being a good listener, showing empathy towards others, and being determined to achieve my goals. I have specific needs and preferences that help me thrive in different situations. My profile includes information about how I learn best, what environments I feel most comfortable in, and the support I need to be successful. Understanding my profile helps others know how to best support and interact with me.",
+        "images": [
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4T1DEAUP7IUuf549ei7qMBjOtB-OnG9_1Iw&s",
+          "https://ap-southeast-2-seek-apac.graphassets.com/AEzBCRO50TYyqbV6XzRDQz/fSjPJg4nRp6p9O50LMnJ",
+          "https://www.minterdial.com/wp-content/uploads/2024/07/Gen-AI-and-the-Amazing-Maze-of-Empathy.png"
+        ],
+        "imageDescriptions": [
+          "Profile section image",
           "Torn paper background",
           "My Story sign"
         ]
@@ -46,17 +59,43 @@
     "image": "/images/Likes.jpg",
     "details": [
       {
-        "description": "A collection of my favorite activities and hobbies.",
+        "subheading": "Creative Activities",
+        "description": "I love expressing myself through art and music. When I'm painting, I enjoy using bright colors to create abstract patterns. Playing the piano helps me relax, especially when I can play my favorite songs. I also like making collages with magazine cutouts and creating digital art on my tablet. These activities help me express my emotions and feel accomplished.",
         "images": [
-          "https://t4.ftcdn.net/jpg/05/17/53/57/360_F_517535712_q7f9QC9X6TQxWi6xYZZbMmw5cnLMr279.jpg",
-          "https://t4.ftcdn.net/jpg/05/17/53/57/360_F_517535712_q7f9QC9X6TQxWi6xYZZbMmw5cnLMr279.jpg"
+          "https://t3.ftcdn.net/jpg/02/73/22/74/360_F_273227473_N0WRQuX3uZCJJxlHKYZF44uaJAkh2xLG.jpg",
+          "https://www.normans.co.uk/cdn/shop/articles/AdobeStock_38208031-1_1ab7eed2-1643-4216-8ad4-06a3d62c1806.jpg?v=1620932005"
+        ],
+        "imageDescriptions": [
+          "A person painting on a canvas with vibrant colors",
+          "Someone playing piano with focused expression"
         ]
       },
       {
-        "description": "More details about my interests and preferences.",
+        "subheading": "Outdoor Adventures",
+        "description": "Being in nature brings me joy and peace. I love going for walks in the park, especially in the morning when it's quiet. Gardening is another favorite activity - I enjoy planting flowers and watching them grow. When the weather is nice, I like having picnics with friends and playing outdoor games. These activities help me stay active and connected with the world around me.",
         "images": [
-          "https://t4.ftcdn.net/jpg/05/17/53/57/360_F_517535712_q7f9QC9X6TQxWi6xYZZbMmw5cnLMr279.jpg",
-          "https://t4.ftcdn.net/jpg/05/17/53/57/360_F_517535712_q7f9QC9X6TQxWi6xYZZbMmw5cnLMr279.jpg"
+          "https://images.ctfassets.net/7ajcefednbt4/h6GzUipHK2QdtaiBwvsxD/9f6fead5779a61261ae1c3879dd8a3ab/The_Ten_Essentials_For_Every_Outdoor_Adventure_Pavlo_Glazkov.jpg?fm=webp&w=2560",
+          "https://www.usnews.com/object/image/00000169-6cf9-df95-a57d-7cfbd2e90000/190311outdooradventures-stock.jpg?update-time=1552314705709&size=responsive640",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFlLLZKbTtiu5mD5lh-y3rAuG2kf0WH_TAFQ&s"
+        ],
+        "imageDescriptions": [
+          "A person hiking through a scenic mountain trail",
+          "Group of friends having a picnic in a sunny park",
+          "Someone gardening and planting flowers in a garden"
+        ]
+      },
+      {
+        "subheading": "Social Activities",
+        "description": "Spending time with friends and family is very important to me. I enjoy playing board games and doing puzzles together. Going to the movies or watching my favorite shows with others makes me happy. I also like participating in group activities like cooking classes or art workshops. These social interactions help me feel connected and supported.",
+        "images": [
+          "https://cdn.apartmenttherapy.info/image/upload/v1667575155/stock/custom%20stock/2022-11-custom-stock/games-0228-edit.jpg",
+          "https://www.paranoiaquest.com/wp-content/uploads/2022/08/shutterstock_1915963540-min.jpg",
+          "https://www.wellpower.org/wp-content/uploads/2024/07/Summer-Blockbuster.jpg"
+        ],
+        "imageDescriptions": [
+          "Group of people playing board games and laughing together",
+          "Friends working together on a puzzle at a table",
+          "People watching a movie together in a theater"
         ]
       }
     ]
@@ -67,16 +106,45 @@
     "image": "/images/TalktoMe.jpg",
     "details": [
       {
-        "description": "Tips and guidelines on how best to communicate with me.",
+        "subheading": "Communication Preferences",
+        "description": "I prefer clear and direct communication. When speaking to me, please use simple language and give me time to process what you're saying. I appreciate when people speak at a moderate pace and check in to make sure I understand. If I need clarification, I might ask you to repeat or explain things differently. Visual aids or written instructions can be very helpful for me to understand better.",
         "images": [
-          "https://t4.ftcdn.net/jpg/05/17/53/57/360_F_517535712_q7f9QC9X6TQxWi6xYZZbMmw5cnLMr279.jpg"
+          "https://img.freepik.com/free-photo/close-up-young-successful-man-smiling-camera-standing-casual-outfit-against-blue-background_1258-66609.jpg",
+          "https://img.freepik.com/free-photo/young-woman-teacher-whiteboard-classroom_1303-17942.jpg",
+          "https://media.licdn.com/dms/image/v2/D4D12AQFOwDQo0LU_7A/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1661439892360?e=2147483647&v=beta&t=TcMMfeCllohbNbtc1gc42BiZWcXGg2j2Lghs87ahh6w"
+        ],
+        "imageDescriptions": [
+          "A friendly person smiling and making eye contact",
+          "Teacher using a whiteboard to explain concepts visually",
+          "Person using a tablet to show visual instructions"
         ]
       },
       {
-        "description": "Additional communication strategies and preferences.",
+        "subheading": "Non-Verbal Communication",
+        "description": "I respond well to positive body language and facial expressions. A warm smile and maintaining appropriate eye contact helps me feel comfortable. I appreciate when people use gestures to support their words, as it helps me understand better. If I seem confused or overwhelmed, a gentle touch on the shoulder or a pause in conversation can help me regroup. I also use my own body language to express how I'm feeling.",
         "images": [
-          "https://t4.ftcdn.net/jpg/05/17/53/57/360_F_517535712_q7f9QC9X6TQxWi6xYZZbMmw5cnLMr279.jpg",
-          "https://t4.ftcdn.net/jpg/05/17/53/57/360_F_517535712_q7f9QC9X6TQxWi6xYZZbMmw5cnLMr279.jpg"
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSe8imPlKVKPsc66Lpa7XaacealRmZvrQC73Q&s",
+          "https://cdn.aib.edu.au/public-website/uploads/p/2014/06/form-submission-7472-6reasonseffectivecommunicationfocusbusiness-2-desktop-768x432-1608079236-85.jpg",
+          "https://www.shutterstock.com/image-photo/close-caring-doctor-touching-mature-600nw-2173377963.jpg"
+        ],
+        "imageDescriptions": [
+          "Person using hand gestures while speaking",
+          "Two people maintaining positive eye contact during conversation",
+          "Supportive person gently touching someone's shoulder"
+        ]
+      },
+      {
+        "subheading": "Supportive Communication",
+        "description": "I feel most comfortable when conversations are structured and predictable. Starting with a clear topic and sticking to it helps me stay focused. I appreciate when people give me choices and ask for my input. If I'm having trouble expressing myself, I might use alternative communication methods like writing or drawing. Please be patient and give me the time I need to respond.",
+        "images": [
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHaafH_7aYGWViiIXrYsnh_3ErAaFfIdtfKw&s",
+          "https://media.licdn.com/dms/image/v2/D4E12AQGYHWYg7rr4lQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1687791431321?e=2147483647&v=beta&t=cDQbZxAt-v3WFKA_Zi5CmYjM7sBh9vqojuXyPDP-bQg",
+          "https://media.istockphoto.com/id/628064782/photo/artist-drawing-pencil-portrait-close-up.jpg?s=612x612&w=0&k=20&c=N7Xv9s78GeSymQ2eNSGyD9f0M3T-g9bwBmRRD45ukHo="
+        ],
+        "imageDescriptions": [
+          "Person writing notes in a structured format",
+          "Two people having a focused conversation with clear topics",
+          "Person drawing as an alternative form of communication"
         ]
       }
     ]
@@ -343,3 +411,4 @@
     ]
   }
 ]
+
